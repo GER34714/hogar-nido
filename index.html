@@ -2,27 +2,155 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hogar Nido | Electrodomésticos y productos para el hogar</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!-- =====================================================
+       SEO
+  ====================================================== -->
+
+  <title>
+    Hogar Nido | Electrodomésticos y productos para el hogar
+  </title>
 
   <meta
     name="description"
-    content="Hogar Nido - Electrodomésticos, productos para cocina, limpieza y hogar."
+    content="Hogar Nido. Electrodomésticos, productos para cocina, limpieza y hogar."
   >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta
+    name="keywords"
+    content="Hogar Nido, electrodomésticos, productos para el hogar, cocina, freidora de aire, licuadora, cafetera, microondas"
+  >
+
+  <meta
+    name="author"
+    content="Hogar Nido"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+
+  <!-- =====================================================
+       OPEN GRAPH
+  ====================================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Hogar Nido | Electrodomésticos y productos para el hogar"
+  >
+
+  <meta
+    property="og:description"
+    content="Descubrí nuestros electrodomésticos y productos para cocina, limpieza y hogar."
+  >
+
+  <!-- REEMPLAZAR POR EL DOMINIO REAL CUANDO LO TENGAS -->
+
+  <meta
+    property="og:url"
+    content="https://hogar-nido.onrender.com/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://iili.io/CDS3jLb.jpg"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Logo Hogar Nido"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Hogar Nido"
+  >
+
+  <meta
+    property="og:locale"
+    content="es_AR"
+  >
+
+
+  <!-- =====================================================
+       TWITTER / X CARD
+  ====================================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Hogar Nido | Electrodomésticos"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Productos para cocina, limpieza y hogar."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://iili.io/CD8LzBe.png"
+  >
+
+
+  <!-- =====================================================
+       FAVICON
+  ====================================================== -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://iili.io/CD8LzBe.png"
+  >
+
+
+  <!-- =====================================================
+       FUENTES
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   >
 
+
   <style>
 
+    /* =====================================================
+       VARIABLES
+    ====================================================== */
+
     :root {
+
       --violeta: #9b5de5;
       --violeta-dark: #64339a;
       --violeta-light: #eee4f8;
@@ -36,169 +164,268 @@
       --verde: #e7eee3;
 
       --radio: 25px;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        RESET
-    ========================================= */
+    ====================================================== */
 
     * {
+
       margin: 0;
       padding: 0;
+
       box-sizing: border-box;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
+
 
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--negro);
-      background: var(--fondo);
-      overflow-x: hidden;
-    }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+      font-family:
+        "DM Sans",
+        sans-serif;
 
-    a {
-      color: inherit;
-    }
-
-
-    /* =========================================
-       LOGO - NEÓN VIOLETA SUTIL
-    ========================================= */
-
-    .neon-logo {
-      position: relative;
-
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    .neon-logo::before {
-      content: "";
-
-      position: absolute;
-
-      width: 75%;
-      height: 55%;
-
-      border-radius: 50%;
+      color:
+        var(--negro);
 
       background:
-        rgba(155, 93, 229, 0.14);
+        var(--fondo);
 
-      filter: blur(22px);
+      overflow-x:
+        hidden;
+
+    }
+
+
+    body.modal-open {
+
+      overflow:
+        hidden;
+
+    }
+
+
+    img {
+
+      display:
+        block;
+
+      max-width:
+        100%;
+
+    }
+
+
+    a {
+
+      color:
+        inherit;
+
+    }
+
+
+    button {
+
+      font-family:
+        inherit;
+
+    }
+
+
+    /* =====================================================
+       LOGO NEÓN SUTIL
+    ====================================================== */
+
+    .neon-logo {
+
+      position:
+        relative;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+    }
+
+
+    .neon-logo::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        75%;
+
+      height:
+        55%;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(155, 93, 229, .14);
+
+      filter:
+        blur(22px);
 
       animation:
         subtleGlow 4s ease-in-out infinite;
 
-      z-index: 0;
+      z-index:
+        0;
+
     }
 
+
     .neon-logo img {
-      position: relative;
 
-      z-index: 2;
+      position:
+        relative;
 
-      width: 100%;
-      height: 100%;
+      z-index:
+        2;
 
-      object-fit: contain;
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        contain;
 
       filter:
         drop-shadow(
           0 0 3px
-          rgba(155, 93, 229, .40)
+          rgba(155,93,229,.40)
         )
         drop-shadow(
           0 0 7px
-          rgba(155, 93, 229, .20)
+          rgba(155,93,229,.20)
         );
 
       animation:
         subtleLogoGlow 4s ease-in-out infinite;
+
     }
+
 
     @keyframes subtleGlow {
 
       0%,
       100% {
-        opacity: .55;
-        transform: scale(.96);
+
+        opacity:
+          .55;
+
+        transform:
+          scale(.96);
+
       }
 
       50% {
-        opacity: .85;
-        transform: scale(1.03);
+
+        opacity:
+          .85;
+
+        transform:
+          scale(1.03);
+
       }
 
     }
+
 
     @keyframes subtleLogoGlow {
 
       0%,
       100% {
+
         filter:
           drop-shadow(
             0 0 3px
-            rgba(155, 93, 229, .40)
+            rgba(155,93,229,.40)
           )
           drop-shadow(
             0 0 7px
-            rgba(155, 93, 229, .20)
+            rgba(155,93,229,.20)
           );
+
       }
 
       50% {
+
         filter:
           drop-shadow(
             0 0 4px
-            rgba(155, 93, 229, .60)
+            rgba(155,93,229,.60)
           )
           drop-shadow(
             0 0 11px
-            rgba(155, 93, 229, .32)
+            rgba(155,93,229,.32)
           );
+
       }
 
     }
 
 
-    /* =========================================
+    /* =====================================================
        HEADER
-    ========================================= */
+    ====================================================== */
 
     .navbar {
 
-      position: fixed;
+      position:
+        fixed;
 
-      top: 0;
-      left: 0;
+      top:
+        0;
 
-      width: 100%;
-      height: 78px;
+      left:
+        0;
 
-      z-index: 1000;
+      width:
+        100%;
 
-      display: flex;
+      height:
+        78px;
 
-      align-items: center;
-      justify-content: space-between;
+      z-index:
+        1000;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
 
       padding:
         0 6%;
 
       background:
-        rgba(255, 255, 255, .90);
+        rgba(255,255,255,.90);
 
       backdrop-filter:
         blur(18px);
@@ -207,218 +434,305 @@
         blur(18px);
 
       border-bottom:
-        1px solid rgba(0, 0, 0, .06);
+        1px solid
+        rgba(0,0,0,.06);
 
-      transition: .3s;
+      transition:
+        .3s;
+
     }
+
 
     .navbar.scrolled {
 
       box-shadow:
         0 10px 35px
-        rgba(60, 30, 80, .10);
+        rgba(60,30,80,.10);
+
     }
+
 
     .brand {
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 9px;
+      gap:
+        9px;
 
-      text-decoration: none;
+      text-decoration:
+        none;
+
     }
+
 
     .header-logo {
 
-      width: 75px;
-      height: 62px;
+      width:
+        75px;
+
+      height:
+        62px;
+
     }
+
 
     .brand-name {
 
-      font-size: 17px;
+      font-size:
+        17px;
 
-      font-weight: 700;
+      font-weight:
+        700;
+
     }
+
 
     .nav-links {
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 30px;
+      gap:
+        30px;
+
     }
+
 
     .nav-links a {
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
-      font-weight: 600;
+      font-weight:
+        600;
 
-      color: #363238;
+      color:
+        #363238;
 
-      transition: .25s;
+      transition:
+        .25s;
+
     }
+
 
     .nav-links a:hover {
 
       color:
         var(--violeta-dark);
+
     }
+
 
     .nav-contact {
 
       padding:
         11px 20px;
 
-      border-radius: 50px;
+      border-radius:
+        50px;
 
       background:
         var(--negro);
 
       color:
         white !important;
+
     }
+
 
     .nav-contact:hover {
 
       background:
         var(--violeta-dark);
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        HERO
-    ========================================= */
+    ====================================================== */
 
     .hero {
 
-      min-height: 100vh;
+      min-height:
+        100vh;
 
-      position: relative;
+      position:
+        relative;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
       background:
 
         linear-gradient(
           90deg,
-          rgba(25, 20, 29, .88),
-          rgba(25, 20, 29, .60),
-          rgba(25, 20, 29, .15)
+          rgba(25,20,29,.88),
+          rgba(25,20,29,.60),
+          rgba(25,20,29,.15)
         ),
 
         url("https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=2200&q=90");
 
-      background-size: cover;
+      background-size:
+        cover;
 
-      background-position: center;
+      background-position:
+        center;
+
     }
+
 
     .hero::before {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
       background:
 
         radial-gradient(
           circle at 20% 40%,
-          rgba(155, 93, 229, .22),
+          rgba(155,93,229,.22),
           transparent 35%
         );
+
     }
+
 
     .hero::after {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left:
+        0;
 
-      height: 140px;
+      right:
+        0;
+
+      bottom:
+        0;
+
+      height:
+        140px;
 
       background:
         linear-gradient(
           transparent,
           var(--fondo)
         );
+
     }
+
 
     .hero-content {
 
-      position: relative;
+      position:
+        relative;
 
-      z-index: 3;
+      z-index:
+        3;
 
-      width: 90%;
+      width:
+        90%;
 
-      max-width: 1200px;
+      max-width:
+        1200px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      padding-top: 80px;
+      padding-top:
+        80px;
+
     }
+
 
     .hero-logo {
 
-      width: 380px;
+      width:
+        380px;
 
-      max-width: 75vw;
+      max-width:
+        75vw;
 
-      height: 190px;
+      height:
+        190px;
 
-      margin-bottom: 10px;
+      margin-bottom:
+        10px;
+
     }
+
 
     .hero-kicker {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
       padding:
         8px 15px;
 
-      border-radius: 50px;
+      border-radius:
+        50px;
 
       background:
-        rgba(255, 255, 255, .12);
+        rgba(255,255,255,.12);
 
       border:
         1px solid
-        rgba(255, 255, 255, .28);
+        rgba(255,255,255,.28);
 
       color:
         white;
 
-      font-size: 11px;
+      font-size:
+        11px;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      letter-spacing: 1.5px;
+      letter-spacing:
+        1.5px;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
+
     }
+
 
     .hero h1 {
 
-      max-width: 700px;
+      max-width:
+        700px;
 
       color:
         white;
@@ -428,54 +742,85 @@
         serif;
 
       font-size:
-        clamp(43px, 6vw, 72px);
+        clamp(43px,6vw,72px);
 
-      line-height: 1.03;
+      line-height:
+        1.03;
 
-      margin-bottom: 20px;
+      margin-bottom:
+        20px;
+
     }
+
 
     .hero p {
 
-      max-width: 590px;
+      max-width:
+        590px;
 
       color:
         rgba(255,255,255,.90);
 
-      font-size: 18px;
+      font-size:
+        18px;
 
-      line-height: 1.7;
+      line-height:
+        1.7;
+
     }
+
 
     .hero-buttons {
 
-      display: flex;
+      display:
+        flex;
 
-      gap: 13px;
+      gap:
+        13px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      margin-top: 28px;
+      margin-top:
+        28px;
+
     }
+
 
     .button {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
-      justify-content: center;
+      align-items:
+        center;
+
+      justify-content:
+        center;
 
       padding:
         14px 24px;
 
-      border-radius: 50px;
+      border-radius:
+        50px;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      transition: .3s;
+      border:
+        none;
+
+      cursor:
+        pointer;
+
+      transition:
+        .3s;
+
     }
+
 
     .button-main {
 
@@ -484,7 +829,9 @@
 
       color:
         var(--negro);
+
     }
+
 
     .button-main:hover {
 
@@ -494,7 +841,9 @@
       box-shadow:
         0 15px 35px
         rgba(0,0,0,.22);
+
     }
+
 
     .button-outline {
 
@@ -507,7 +856,9 @@
 
       background:
         rgba(255,255,255,.07);
+
     }
+
 
     .button-outline:hover {
 
@@ -516,52 +867,70 @@
 
       color:
         var(--negro);
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        INTRO
-    ========================================= */
+    ====================================================== */
 
     .intro {
 
       padding:
         95px 6% 70px;
+
     }
+
 
     .intro-inner {
 
-      max-width: 1180px;
+      max-width:
+        1180px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         1fr 1fr;
 
-      gap: 70px;
+      gap:
+        70px;
 
-      align-items: center;
+      align-items:
+        center;
+
     }
+
 
     .eyebrow {
 
-      display: block;
+      display:
+        block;
 
       color:
         var(--violeta-dark);
 
-      font-size: 12px;
+      font-size:
+        12px;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      letter-spacing: 2px;
+      letter-spacing:
+        2px;
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
+
     }
+
 
     .intro h2,
     .section-header h2 {
@@ -570,75 +939,102 @@
         "Playfair Display",
         serif;
 
-      line-height: 1.1;
+      line-height:
+        1.1;
+
     }
+
 
     .intro h2 {
 
       font-size:
-        clamp(35px, 5vw, 53px);
+        clamp(35px,5vw,53px);
 
-      margin-bottom: 18px;
+      margin-bottom:
+        18px;
+
     }
+
 
     .intro p {
 
       color:
         var(--gris);
 
-      line-height: 1.8;
+      line-height:
+        1.8;
 
-      font-size: 16px;
+      font-size:
+        16px;
+
     }
+
 
     .intro-card {
 
-      position: relative;
+      position:
+        relative;
 
-      min-height: 320px;
+      min-height:
+        320px;
 
-      border-radius: 32px;
+      border-radius:
+        32px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
       background:
 
         url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85");
 
-      background-size: cover;
+      background-size:
+        cover;
 
-      background-position: center;
+      background-position:
+        center;
 
       box-shadow:
         0 25px 60px
         rgba(73,49,90,.15);
+
     }
+
 
     .intro-card::after {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
       background:
-
         linear-gradient(
           135deg,
           rgba(125,70,170,.28),
           transparent 60%
         );
+
     }
+
 
     .intro-badge {
 
-      position: absolute;
+      position:
+        absolute;
 
-      z-index: 2;
+      z-index:
+        2;
 
-      left: 25px;
-      bottom: 25px;
+      left:
+        25px;
+
+      bottom:
+        25px;
 
       background:
         white;
@@ -646,167 +1042,232 @@
       padding:
         15px 18px;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
       box-shadow:
         0 10px 30px
         rgba(0,0,0,.15);
 
-      font-weight: 700;
+      font-weight:
+        700;
+
     }
+
 
     .intro-badge small {
 
-      display: block;
+      display:
+        block;
 
       color:
         var(--gris);
 
-      font-weight: 400;
+      font-weight:
+        400;
 
-      margin-top: 3px;
+      margin-top:
+        3px;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        CATEGORÍAS
-    ========================================= */
+    ====================================================== */
 
     .categories-section {
 
       padding:
         60px 6% 100px;
+
     }
+
 
     .section-header {
 
-      max-width: 760px;
+      max-width:
+        760px;
 
       margin:
         0 auto 45px;
 
-      text-align: center;
+      text-align:
+        center;
+
     }
+
 
     .section-header h2 {
 
       font-size:
-        clamp(35px, 5vw, 52px);
+        clamp(35px,5vw,52px);
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
+
     }
+
 
     .section-header p {
 
       color:
         var(--gris);
 
-      line-height: 1.7;
+      line-height:
+        1.7;
+
     }
+
 
     .category-grid {
 
-      max-width: 1180px;
+      max-width:
+        1180px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
-      gap: 18px;
+      gap:
+        18px;
+
     }
+
 
     .category {
 
-      position: relative;
+      position:
+        relative;
 
-      min-height: 270px;
+      min-height:
+        270px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
-      border-radius: 25px;
+      border-radius:
+        25px;
 
-      text-decoration: none;
+      text-decoration:
+        none;
 
       background:
         #ddd;
+
     }
+
 
     .category img {
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
-      width: 100%;
-      height: 100%;
+      width:
+        100%;
 
-      object-fit: cover;
+      height:
+        100%;
 
-      transition: .5s;
+      object-fit:
+        cover;
+
+      transition:
+        .5s;
+
     }
+
 
     .category::after {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
       background:
-
         linear-gradient(
           transparent 20%,
           rgba(0,0,0,.78)
         );
+
     }
+
 
     .category:hover img {
 
       transform:
         scale(1.07);
+
     }
+
 
     .category-content {
 
-      position: absolute;
+      position:
+        absolute;
 
-      z-index: 2;
+      z-index:
+        2;
 
-      bottom: 22px;
+      bottom:
+        22px;
 
-      left: 22px;
-      right: 22px;
+      left:
+        22px;
+
+      right:
+        22px;
 
       color:
         white;
+
     }
+
 
     .category-content span {
 
-      font-size: 11px;
+      font-size:
+        11px;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      letter-spacing: 1.5px;
+      letter-spacing:
+        1.5px;
 
-      opacity: .8;
+      opacity:
+        .8;
+
     }
+
 
     .category-content h3 {
 
-      font-size: 23px;
+      font-size:
+        23px;
 
-      margin-top: 4px;
+      margin-top:
+        4px;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        PRODUCTOS
-    ========================================= */
+    ====================================================== */
 
     .products-section {
 
@@ -814,27 +1275,34 @@
         100px 6%;
 
       background:
-
         linear-gradient(
           180deg,
           #f3eef7,
           #ffffff
         );
+
     }
+
 
     .products-grid {
 
-      max-width: 1180px;
+      max-width:
+        1180px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
-      gap: 24px;
+      gap:
+        24px;
+
     }
+
 
     .product {
 
@@ -857,7 +1325,12 @@
 
       transition:
         .35s;
+
+      cursor:
+        pointer;
+
     }
+
 
     .product:hover {
 
@@ -867,63 +1340,88 @@
       box-shadow:
         0 20px 45px
         rgba(50,35,60,.13);
+
     }
+
 
     .product-image {
 
-      height: 285px;
+      height:
+        285px;
 
-      position: relative;
+      position:
+        relative;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
-      justify-content: center;
+      align-items:
+        center;
 
-      overflow: hidden;
+      justify-content:
+        center;
+
+      overflow:
+        hidden;
 
       background:
-
         linear-gradient(
           135deg,
           #faf9fb,
           #eeeaf1
         );
+
     }
+
 
     .product-image img {
 
-      width: 100%;
-      height: 100%;
+      width:
+        100%;
 
-      object-fit: contain;
+      height:
+        100%;
 
-      padding: 20px;
+      object-fit:
+        contain;
+
+      padding:
+        20px;
 
       transition:
         .4s;
+
     }
+
 
     .product:hover
     .product-image img {
 
       transform:
         scale(1.06);
+
     }
+
 
     .product-label {
 
-      position: absolute;
+      position:
+        absolute;
 
-      top: 14px;
-      left: 14px;
+      top:
+        14px;
 
-      z-index: 3;
+      left:
+        14px;
+
+      z-index:
+        3;
 
       padding:
         7px 11px;
 
-      border-radius: 20px;
+      border-radius:
+        20px;
 
       background:
         var(--violeta);
@@ -931,79 +1429,129 @@
       color:
         white;
 
-      font-size: 10px;
+      font-size:
+        10px;
 
-      font-weight: 700;
+      font-weight:
+        700;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      letter-spacing: .7px;
+      letter-spacing:
+        .7px;
+
     }
+
 
     .product-info {
 
       padding:
         21px;
+
     }
+
 
     .product-info h3 {
 
-      font-size: 20px;
+      font-size:
+        20px;
 
-      margin-bottom: 7px;
+      margin-bottom:
+        7px;
+
     }
+
 
     .product-info p {
 
       color:
         var(--gris);
 
-      font-size: 13px;
+      font-size:
+        13px;
 
-      line-height: 1.6;
+      line-height:
+        1.6;
+
+      margin-bottom:
+        13px;
+
     }
 
-    .product-link {
 
-      display: inline-block;
+    .product-price {
 
-      margin-top: 14px;
+      font-size:
+        20px;
+
+      font-weight:
+        700;
 
       color:
         var(--violeta-dark);
 
-      text-decoration: none;
-
-      font-size: 13px;
-
-      font-weight: 700;
     }
 
 
-    /* =========================================
+    .product-view {
+
+      margin-top:
+        14px;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        6px;
+
+      color:
+        var(--violeta-dark);
+
+      font-size:
+        13px;
+
+      font-weight:
+        700;
+
+    }
+
+
+    /* =====================================================
        BANNER
-    ========================================= */
+    ====================================================== */
 
     .promo {
 
-      max-width: 1250px;
+      max-width:
+        1250px;
 
-      min-height: 430px;
+      min-height:
+        430px;
 
       margin:
         20px auto 100px;
 
-      width: 88%;
+      width:
+        88%;
 
-      border-radius: 35px;
+      border-radius:
+        35px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
-      position: relative;
+      position:
+        relative;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
       background:
 
@@ -1021,19 +1569,26 @@
 
       background-position:
         center;
+
     }
+
 
     .promo-content {
 
-      width: 90%;
+      width:
+        90%;
 
-      max-width: 600px;
+      max-width:
+        600px;
 
-      margin-left: 7%;
+      margin-left:
+        7%;
 
       color:
         white;
+
     }
+
 
     .promo-content h2 {
 
@@ -1042,25 +1597,31 @@
         serif;
 
       font-size:
-        clamp(35px, 5vw, 57px);
+        clamp(35px,5vw,57px);
 
-      line-height: 1.05;
+      line-height:
+        1.05;
 
-      margin-bottom: 17px;
+      margin-bottom:
+        17px;
+
     }
+
 
     .promo-content p {
 
-      line-height: 1.7;
+      line-height:
+        1.7;
 
       color:
         rgba(255,255,255,.88);
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        CONTACTO
-    ========================================= */
+    ====================================================== */
 
     .contact {
 
@@ -1069,25 +1630,37 @@
 
       background:
         var(--verde);
+
     }
+
 
     .contact-box {
 
-      max-width: 850px;
+      max-width:
+        850px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      text-align: center;
+      text-align:
+        center;
+
     }
+
 
     .contact-logo {
 
-      width: 210px;
-      height: 130px;
+      width:
+        210px;
+
+      height:
+        130px;
 
       margin:
         0 auto 10px;
+
     }
+
 
     .contact-box h2 {
 
@@ -1096,34 +1669,42 @@
         serif;
 
       font-size:
-        clamp(34px, 5vw, 48px);
+        clamp(34px,5vw,48px);
 
-      margin-bottom: 13px;
+      margin-bottom:
+        13px;
+
     }
+
 
     .contact-box p {
 
       color:
         #596056;
 
-      max-width: 600px;
+      max-width:
+        600px;
 
       margin:
         0 auto 27px;
 
-      line-height: 1.7;
+      line-height:
+        1.7;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        FOOTER
-    ========================================= */
+    ====================================================== */
 
     footer {
 
-      position: relative;
+      position:
+        relative;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
       background:
 
@@ -1141,102 +1722,148 @@
       padding:
         50px 6% 35px;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      gap: 25px;
+      gap:
+        25px;
+
     }
+
 
     footer::before {
 
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      top: 0;
-      left: 0;
+      top:
+        0;
 
-      width: 100%;
-      height: 1px;
+      left:
+        0;
+
+      width:
+        100%;
+
+      height:
+        1px;
 
       background:
-
         linear-gradient(
           90deg,
           transparent,
           rgba(155,93,229,.65),
           transparent
         );
+
     }
+
 
     .footer-logo {
 
-      width: 190px;
-      height: 100px;
+      width:
+        190px;
+
+      height:
+        100px;
+
     }
+
 
     footer p {
 
       color:
         #aaa;
 
-      font-size: 12px;
+      font-size:
+        12px;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
        REDES SOCIALES FLOTANTES
-    ========================================= */
+    ====================================================== */
 
     .floating-social {
 
-      position: fixed;
+      position:
+        fixed;
 
-      right: 22px;
-      bottom: 22px;
+      right:
+        22px;
 
-      z-index: 5000;
+      bottom:
+        22px;
 
-      display: flex;
+      z-index:
+        5000;
 
-      flex-direction: column;
+      display:
+        flex;
 
-      gap: 12px;
+      flex-direction:
+        column;
+
+      gap:
+        12px;
 
       transition:
         opacity .35s,
         transform .35s,
         visibility .35s;
+
     }
+
 
     .floating-social.hidden {
 
-      opacity: 0;
+      opacity:
+        0;
 
-      visibility: hidden;
+      visibility:
+        hidden;
 
-      pointer-events: none;
+      pointer-events:
+        none;
 
       transform:
         translateY(25px);
+
     }
+
 
     .social-button {
 
-      width: 57px;
-      height: 57px;
+      width:
+        57px;
 
-      border-radius: 50%;
+      height:
+        57px;
 
-      display: flex;
+      border-radius:
+        50%;
 
-      align-items: center;
-      justify-content: center;
+      display:
+        flex;
 
-      overflow: hidden;
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      overflow:
+        hidden;
 
       background:
         white;
@@ -1247,21 +1874,31 @@
 
       transition:
         .3s;
+
     }
+
 
     .social-button:hover {
 
       transform:
         scale(1.1);
+
     }
+
 
     .social-button img {
 
-      width: 100%;
-      height: 100%;
+      width:
+        100%;
 
-      object-fit: cover;
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
     }
+
 
     .whatsapp {
 
@@ -1270,37 +1907,422 @@
 
       padding:
         9px;
+
     }
+
 
     .whatsapp img {
 
       object-fit:
         contain;
+
     }
 
 
-    /* =========================================
+    /* =====================================================
+       MODAL
+    ====================================================== */
+
+    .modal {
+
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      z-index:
+        9999;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        20px;
+
+      background:
+        rgba(15,12,17,.72);
+
+      backdrop-filter:
+        blur(10px);
+
+      -webkit-backdrop-filter:
+        blur(10px);
+
+      opacity:
+        0;
+
+      visibility:
+        hidden;
+
+      transition:
+        .3s;
+
+    }
+
+
+    .modal.active {
+
+      opacity:
+        1;
+
+      visibility:
+        visible;
+
+    }
+
+
+    .modal-box {
+
+      position:
+        relative;
+
+      width:
+        100%;
+
+      max-width:
+        900px;
+
+      max-height:
+        90vh;
+
+      overflow:
+        auto;
+
+      background:
+        white;
+
+      border-radius:
+        30px;
+
+      box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.35);
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      transform:
+        translateY(20px)
+        scale(.97);
+
+      transition:
+        .35s;
+
+    }
+
+
+    .modal.active
+    .modal-box {
+
+      transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+
+    .modal-close {
+
+      position:
+        absolute;
+
+      z-index:
+        5;
+
+      top:
+        16px;
+
+      right:
+        16px;
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      border:
+        none;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255,255,255,.92);
+
+      box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.15);
+
+      cursor:
+        pointer;
+
+      font-size:
+        20px;
+
+      transition:
+        .25s;
+
+    }
+
+
+    .modal-close:hover {
+
+      background:
+        var(--negro);
+
+      color:
+        white;
+
+      transform:
+        rotate(90deg);
+
+    }
+
+
+    .modal-image {
+
+      min-height:
+        480px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #faf9fb,
+          #eeeaf1
+        );
+
+      padding:
+        40px;
+
+    }
+
+
+    .modal-image img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      max-height:
+        430px;
+
+      object-fit:
+        contain;
+
+    }
+
+
+    .modal-info {
+
+      padding:
+        55px 45px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        center;
+
+    }
+
+
+    .modal-category {
+
+      display:
+        inline-flex;
+
+      align-self:
+        flex-start;
+
+      padding:
+        7px 12px;
+
+      border-radius:
+        50px;
+
+      background:
+        var(--violeta-light);
+
+      color:
+        var(--violeta-dark);
+
+      font-size:
+        11px;
+
+      font-weight:
+        700;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        1px;
+
+      margin-bottom:
+        14px;
+
+    }
+
+
+    .modal-info h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(32px,4vw,47px);
+
+      line-height:
+        1.05;
+
+      margin-bottom:
+        15px;
+
+    }
+
+
+    .modal-description {
+
+      color:
+        var(--gris);
+
+      line-height:
+        1.8;
+
+      font-size:
+        15px;
+
+      margin-bottom:
+        22px;
+
+    }
+
+
+    .modal-price {
+
+      font-size:
+        30px;
+
+      font-weight:
+        700;
+
+      color:
+        var(--violeta-dark);
+
+      margin-bottom:
+        25px;
+
+    }
+
+
+    .modal-actions {
+
+      display:
+        flex;
+
+      gap:
+        10px;
+
+      flex-wrap:
+        wrap;
+
+    }
+
+
+    .modal-whatsapp {
+
+      background:
+        #25D366;
+
+      color:
+        white;
+
+    }
+
+
+    .modal-whatsapp:hover {
+
+      background:
+        #1da851;
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .modal-secondary {
+
+      background:
+        #f2eef5;
+
+      color:
+        var(--negro);
+
+    }
+
+
+    .modal-secondary:hover {
+
+      background:
+        #e8e0ed;
+
+    }
+
+
+    /* =====================================================
        RESPONSIVE
-    ========================================= */
+    ====================================================== */
 
     @media (max-width: 1050px) {
 
       .category-grid {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
+
       }
+
 
       .products-grid {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
+
       }
+
 
       .intro-inner {
 
         grid-template-columns:
           1fr;
+
       }
 
     }
@@ -1310,27 +2332,41 @@
 
       .navbar {
 
-        height: 70px;
+        height:
+          70px;
 
         padding:
           0 5%;
+
       }
+
 
       .header-logo {
 
-        width: 65px;
-        height: 55px;
+        width:
+          65px;
+
+        height:
+          55px;
+
       }
+
 
       .brand-name {
 
-        display: none;
+        display:
+          none;
+
       }
+
 
       .nav-links {
 
-        display: none;
+        display:
+          none;
+
       }
+
 
       .hero {
 
@@ -1339,76 +2375,103 @@
 
         background-position:
           62% center;
+
       }
+
 
       .hero-content {
 
-        width: 90%;
+        width:
+          90%;
 
         padding-top:
           40px;
+
       }
+
 
       .hero-logo {
 
-        width: 290px;
+        width:
+          290px;
 
-        height: 160px;
+        height:
+          160px;
+
       }
+
 
       .hero h1 {
 
         font-size:
           43px;
+
       }
+
 
       .hero p {
 
         font-size:
           15px;
+
       }
+
 
       .intro {
 
         padding:
           70px 5% 55px;
+
       }
+
 
       .categories-section {
 
         padding:
           50px 5% 70px;
+
       }
+
 
       .category-grid {
 
         grid-template-columns:
           1fr;
+
       }
+
 
       .category {
 
         min-height:
           230px;
+
       }
+
 
       .products-section {
 
         padding:
           70px 5%;
+
       }
+
 
       .products-grid {
 
         grid-template-columns:
           1fr;
+
       }
+
 
       .product-image {
 
         height:
           300px;
+
       }
+
 
       .promo {
 
@@ -1426,13 +2489,17 @@
 
         background-position:
           65% center;
+
       }
+
 
       .promo-content {
 
         margin-left:
           7%;
+
       }
+
 
       .contact-logo {
 
@@ -1441,7 +2508,9 @@
 
         height:
           110px;
+
       }
+
 
       footer {
 
@@ -1450,7 +2519,9 @@
 
         text-align:
           center;
+
       }
+
 
       .floating-social {
 
@@ -1459,7 +2530,9 @@
 
         bottom:
           14px;
+
       }
+
 
       .social-button {
 
@@ -1468,6 +2541,96 @@
 
         height:
           53px;
+
+      }
+
+
+      /* MODAL MOBILE */
+
+      .modal {
+
+        padding:
+          10px;
+
+        align-items:
+          flex-end;
+
+      }
+
+
+      .modal-box {
+
+        max-height:
+          94vh;
+
+        border-radius:
+          27px 27px 0 0;
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .modal-image {
+
+        min-height:
+          280px;
+
+        height:
+          280px;
+
+        padding:
+          25px;
+
+      }
+
+
+      .modal-image img {
+
+        max-height:
+          250px;
+
+      }
+
+
+      .modal-info {
+
+        padding:
+          30px 25px 35px;
+
+      }
+
+
+      .modal-info h2 {
+
+        font-size:
+          34px;
+
+      }
+
+
+      .modal-price {
+
+        font-size:
+          27px;
+
+      }
+
+
+      .modal-actions {
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .modal-actions .button {
+
+        width:
+          100%;
+
       }
 
     }
@@ -1480,9 +2643,9 @@
 <body>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        HEADER
-  ========================================= -->
+  ====================================================== -->
 
   <header
     class="navbar"
@@ -1494,7 +2657,9 @@
       class="brand"
     >
 
-      <div class="neon-logo header-logo">
+      <div
+        class="neon-logo header-logo"
+      >
 
         <img
           src="https://iili.io/CD8LzBe.png"
@@ -1537,9 +2702,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        HERO
-  ========================================= -->
+  ====================================================== -->
 
   <section
     class="hero"
@@ -1553,7 +2718,9 @@
       </span>
 
 
-      <div class="neon-logo hero-logo">
+      <div
+        class="neon-logo hero-logo"
+      >
 
         <img
           src="https://iili.io/CD8LzBe.png"
@@ -1600,9 +2767,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        INTRO
-  ========================================= -->
+  ====================================================== -->
 
   <section class="intro">
 
@@ -1651,9 +2818,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        CATEGORÍAS
-  ========================================= -->
+  ====================================================== -->
 
   <section
     class="categories-section"
@@ -1690,7 +2857,7 @@
 
         <img
           src="https://iili.io/CD8wTAv.webp"
-          alt="Productos de cocina"
+          alt="Cocina"
           loading="lazy"
         >
 
@@ -1716,7 +2883,7 @@
 
         <img
           src="https://iili.io/CD8OMn2.webp"
-          alt="Freidoras de aire"
+          alt="Pequeños electrodomésticos"
           loading="lazy"
         >
 
@@ -1727,7 +2894,7 @@
           </span>
 
           <h3>
-            Pequeños electrodomésticos
+            Electrodomésticos
           </h3>
 
         </div>
@@ -1742,7 +2909,7 @@
 
         <img
           src="https://iili.io/CD8SAdP.png"
-          alt="Aspiradora para el hogar"
+          alt="Limpieza"
           loading="lazy"
         >
 
@@ -1768,7 +2935,7 @@
 
         <img
           src="https://iili.io/CD8UFGR.png"
-          alt="Productos para el hogar"
+          alt="Hogar"
           loading="lazy"
         >
 
@@ -1793,9 +2960,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        PRODUCTOS
-  ========================================= -->
+  ====================================================== -->
 
   <section
     class="products-section"
@@ -1815,401 +2982,19 @@
 
 
       <p>
-        Algunos de los productos disponibles
-        para equipar tu hogar.
+        Tocá cualquier producto para ver
+        todos sus detalles.
       </p>
 
     </div>
 
 
-    <div class="products-grid">
-
-
-      <!-- 01 PAVA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8wTAv.webp"
-            alt="Pava eléctrica"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Pava eléctrica
-          </h3>
-
-          <p>
-            Práctica para preparar agua caliente
-            rápidamente.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 02 FREIDORA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8OMn2.webp"
-            alt="Freidora de aire"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Freidora de aire
-          </h3>
-
-          <p>
-            Una alternativa práctica para preparar
-            diferentes comidas.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 03 LICUADORA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8ehVp.png"
-            alt="Licuadora"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Licuadora
-          </h3>
-
-          <p>
-            Ideal para licuados, bebidas
-            y diferentes preparaciones.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 04 TOSTADORA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8kcX4.png"
-            alt="Tostadora"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Tostadora
-          </h3>
-
-          <p>
-            Una opción práctica para desayunos
-            rápidos y simples.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 05 CAFETERA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8va8F.png"
-            alt="Cafetera"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Cafetera
-          </h3>
-
-          <p>
-            Para disfrutar un café recién preparado
-            en cualquier momento.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 06 MICROONDAS -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8vQwb.png"
-            alt="Microondas"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Microondas
-          </h3>
-
-          <p>
-            Solución práctica para calentar
-            y preparar comidas.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 07 ASPIRADORA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Limpieza
-          </span>
-
-          <img
-            src="https://iili.io/CD8SAdP.png"
-            alt="Aspiradora"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Aspiradora
-          </h3>
-
-          <p>
-            Para mantener los distintos espacios
-            del hogar limpios.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 08 PLANCHA -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Hogar
-          </span>
-
-          <img
-            src="https://iili.io/CD8UFGR.png"
-            alt="Plancha eléctrica"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Plancha eléctrica
-          </h3>
-
-          <p>
-            Práctica para el cuidado diario
-            de la ropa.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- 09 AIR FRYER COSORI -->
-
-      <article class="product">
-
-        <div class="product-image">
-
-          <span class="product-label">
-            Cocina
-          </span>
-
-          <img
-            src="https://iili.io/CD8g2R9.png"
-            alt="Air Fryer Cosori"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-info">
-
-          <h3>
-            Air Fryer Cosori
-          </h3>
-
-          <p>
-            Freidora de aire para preparar
-            diferentes comidas.
-          </p>
-
-          <a
-            href="#contacto"
-            class="product-link"
-          >
-            Consultar producto →
-          </a>
-
-        </div>
-
-      </article>
-
+    <div
+      class="products-grid"
+      id="productsGrid"
+    >
+
+      <!-- Los productos se generan automáticamente -->
 
     </div>
 
@@ -2217,9 +3002,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        BANNER
-  ========================================= -->
+  ====================================================== -->
 
   <section class="promo">
 
@@ -2248,10 +3033,10 @@
       <div class="hero-buttons">
 
         <a
-          href="#contacto"
+          href="#productos"
           class="button button-main"
         >
-          Consultar productos
+          Ver productos
         </a>
 
       </div>
@@ -2262,9 +3047,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        CONTACTO
-  ========================================= -->
+  ====================================================== -->
 
   <section
     class="contact"
@@ -2274,7 +3059,9 @@
     <div class="contact-box">
 
 
-      <div class="neon-logo contact-logo">
+      <div
+        class="neon-logo contact-logo"
+      >
 
         <img
           src="https://iili.io/CD8LzBe.png"
@@ -2296,8 +3083,6 @@
       </p>
 
 
-      <!-- CAMBIAR EL NÚMERO -->
-
       <a
         href="https://wa.me/5490000000000"
         target="_blank"
@@ -2318,14 +3103,16 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        FOOTER
-  ========================================= -->
+  ====================================================== -->
 
   <footer id="footer">
 
 
-    <div class="neon-logo footer-logo">
+    <div
+      class="neon-logo footer-logo"
+    >
 
       <img
         src="https://iili.io/CD8LzBe.png"
@@ -2344,9 +3131,9 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
        BOTONES FLOTANTES
-  ========================================= -->
+  ====================================================== -->
 
   <div
     class="floating-social"
@@ -2394,16 +3181,626 @@
 
 
 
-  <!-- =========================================
+  <!-- =====================================================
+       MODAL PRODUCTO
+  ====================================================== -->
+
+  <div
+    class="modal"
+    id="productModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-box">
+
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-image">
+
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+        >
+
+      </div>
+
+
+      <div class="modal-info">
+
+
+        <span
+          class="modal-category"
+          id="modalCategory"
+        >
+        </span>
+
+
+        <h2
+          id="modalTitle"
+        >
+        </h2>
+
+
+        <p
+          class="modal-description"
+          id="modalDescription"
+        >
+        </p>
+
+
+        <div
+          class="modal-price"
+          id="modalPrice"
+        >
+        </div>
+
+
+        <div class="modal-actions">
+
+
+          <a
+            id="modalWhatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="button modal-whatsapp"
+          >
+            Consultar por WhatsApp
+          </a>
+
+
+          <button
+            id="modalContinue"
+            class="button modal-secondary"
+          >
+            Seguir viendo
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
        JAVASCRIPT
-  ========================================= -->
+  ====================================================== -->
 
   <script>
 
-    /* HEADER */
+    /* =====================================================
+       CONFIGURACIÓN
+    ====================================================== */
+
+    /*
+      CAMBIÁ ESTOS DATOS CUANDO TENGAS
+      LA INFORMACIÓN REAL DEL NEGOCIO.
+    */
+
+    const WHATSAPP_NUMBER =
+      "5490000000000";
+
+
+    /*
+      PRODUCTOS
+
+      Acá podés cambiar:
+
+      - nombre
+      - categoría
+      - precio
+      - descripción
+      - imagen
+    */
+
+    const products = [
+
+      {
+        id: 1,
+
+        name:
+          "Pava eléctrica",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Pava eléctrica práctica y funcional para preparar agua caliente de manera rápida y sencilla. Ideal para acompañar tus desayunos, meriendas y momentos de todos los días.",
+
+        image:
+          "https://iili.io/CD8wTAv.webp"
+      },
+
+
+      {
+        id: 2,
+
+        name:
+          "Freidora de aire",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Freidora de aire pensada para preparar diferentes comidas de manera práctica. Una excelente opción para incorporar a tu cocina.",
+
+        image:
+          "https://iili.io/CD8OMn2.webp"
+      },
+
+
+      {
+        id: 3,
+
+        name:
+          "Licuadora",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Licuadora ideal para preparar licuados, bebidas, salsas y diferentes preparaciones. Un electrodoméstico práctico para el día a día.",
+
+        image:
+          "https://iili.io/CD8ehVp.png"
+      },
+
+
+      {
+        id: 4,
+
+        name:
+          "Tostadora",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Tostadora práctica para preparar tostadas y acompañar tus desayunos o meriendas de una manera rápida y sencilla.",
+
+        image:
+          "https://iili.io/CD8kcX4.png"
+      },
+
+
+      {
+        id: 5,
+
+        name:
+          "Cafetera",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Cafetera pensada para disfrutar un buen café en cualquier momento del día. Práctica y funcional para tu cocina.",
+
+        image:
+          "https://iili.io/CD8va8F.png"
+      },
+
+
+      {
+        id: 6,
+
+        name:
+          "Microondas",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Microondas práctico para calentar y preparar diferentes comidas. Una solución cómoda para la cocina de todos los días.",
+
+        image:
+          "https://iili.io/CD8vQwb.png"
+      },
+
+
+      {
+        id: 7,
+
+        name:
+          "Aspiradora",
+
+        category:
+          "Limpieza",
+
+        price:
+          "$00.000",
+
+        description:
+          "Aspiradora para ayudarte a mantener limpios diferentes espacios del hogar de manera práctica y cómoda.",
+
+        image:
+          "https://iili.io/CD8SAdP.png"
+      },
+
+
+      {
+        id: 8,
+
+        name:
+          "Plancha eléctrica",
+
+        category:
+          "Hogar",
+
+        price:
+          "$00.000",
+
+        description:
+          "Plancha eléctrica práctica para el cuidado diario de la ropa y para mantener tus prendas listas para cada ocasión.",
+
+        image:
+          "https://iili.io/CD8UFGR.png"
+      },
+
+
+      {
+        id: 9,
+
+        name:
+          "Air Fryer Cosori",
+
+        category:
+          "Cocina",
+
+        price:
+          "$00.000",
+
+        description:
+          "Air Fryer Cosori para preparar diferentes comidas de manera práctica y cómoda. Un electrodoméstico ideal para sumar a tu cocina.",
+
+        image:
+          "https://iili.io/CD8g2R9.png"
+      }
+
+    ];
+
+
+
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
+
+    const productsGrid =
+      document.getElementById(
+        "productsGrid"
+      );
+
+
+    const modal =
+      document.getElementById(
+        "productModal"
+      );
+
+
+    const modalImage =
+      document.getElementById(
+        "modalImage"
+      );
+
+
+    const modalTitle =
+      document.getElementById(
+        "modalTitle"
+      );
+
+
+    const modalCategory =
+      document.getElementById(
+        "modalCategory"
+      );
+
+
+    const modalDescription =
+      document.getElementById(
+        "modalDescription"
+      );
+
+
+    const modalPrice =
+      document.getElementById(
+        "modalPrice"
+      );
+
+
+    const modalWhatsapp =
+      document.getElementById(
+        "modalWhatsapp"
+      );
+
+
+    const modalClose =
+      document.getElementById(
+        "modalClose"
+      );
+
+
+    const modalContinue =
+      document.getElementById(
+        "modalContinue"
+      );
+
+
+
+    /* =====================================================
+       GENERAR PRODUCTOS
+    ====================================================== */
+
+    function renderProducts() {
+
+      productsGrid.innerHTML = "";
+
+
+      products.forEach(
+        (product) => {
+
+
+          const article =
+            document.createElement(
+              "article"
+            );
+
+
+          article.className =
+            "product";
+
+
+          article.setAttribute(
+            "data-id",
+            product.id
+          );
+
+
+          article.innerHTML = `
+
+            <div class="product-image">
+
+              <span class="product-label">
+                ${product.category}
+              </span>
+
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="product-info">
+
+              <h3>
+                ${product.name}
+              </h3>
+
+              <p>
+                ${product.description}
+              </p>
+
+              <div class="product-price">
+                ${product.price}
+              </div>
+
+              <div class="product-view">
+                Ver producto →
+              </div>
+
+            </div>
+
+          `;
+
+
+          article.addEventListener(
+            "click",
+            () => {
+
+              openProduct(
+                product
+              );
+
+            }
+          );
+
+
+          productsGrid.appendChild(
+            article
+          );
+
+        }
+      );
+
+    }
+
+
+
+    /* =====================================================
+       ABRIR MODAL
+    ====================================================== */
+
+    function openProduct(product) {
+
+      modalImage.src =
+        product.image;
+
+      modalImage.alt =
+        product.name;
+
+
+      modalTitle.textContent =
+        product.name;
+
+
+      modalCategory.textContent =
+        product.category;
+
+
+      modalDescription.textContent =
+        product.description;
+
+
+      modalPrice.textContent =
+        product.price;
+
+
+      /*
+        Mensaje automático
+        para WhatsApp.
+      */
+
+      const message =
+        `Hola! Quisiera consultar por el producto: ${product.name}`;
+
+
+      modalWhatsapp.href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+
+      modal.classList.add(
+        "active"
+      );
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+
+    /* =====================================================
+       CERRAR MODAL
+    ====================================================== */
+
+    function closeProduct() {
+
+      modal.classList.remove(
+        "active"
+      );
+
+
+      modal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+    }
+
+
+
+    modalClose.addEventListener(
+      "click",
+      closeProduct
+    );
+
+
+    modalContinue.addEventListener(
+      "click",
+      closeProduct
+    );
+
+
+    /*
+      Cerrar haciendo clic
+      fuera del producto.
+    */
+
+    modal.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === modal
+        ) {
+
+          closeProduct();
+
+        }
+
+      }
+    );
+
+
+    /*
+      Cerrar con ESC.
+    */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape" &&
+          modal.classList.contains("active")
+        ) {
+
+          closeProduct();
+
+        }
+
+      }
+    );
+
+
+
+    /* =====================================================
+       HEADER AL HACER SCROLL
+    ====================================================== */
 
     const navbar =
-      document.getElementById("navbar");
+      document.getElementById(
+        "navbar"
+      );
+
 
     window.addEventListener(
       "scroll",
@@ -2429,14 +3826,16 @@
     );
 
 
-    /* =========================================
-       OCULTAR INSTAGRAM + WHATSAPP EN FOOTER
-    ========================================= */
+
+    /* =====================================================
+       OCULTAR REDES EN FOOTER
+    ====================================================== */
 
     const floatingSocial =
       document.getElementById(
         "floatingSocial"
       );
+
 
     const footer =
       document.getElementById(
@@ -2474,7 +3873,8 @@
         },
 
         {
-          threshold: 0.05
+          threshold:
+            0.05
         }
 
       );
@@ -2483,6 +3883,14 @@
     footerObserver.observe(
       footer
     );
+
+
+
+    /* =====================================================
+       INICIALIZAR
+    ====================================================== */
+
+    renderProducts();
 
   </script>
 
