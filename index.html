@@ -1,0 +1,1972 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HOGAR_NIDO | Ilumina • Aromatiza • Sentí</title>
+  <meta name="description" content="HOGAR_NIDO 🌿 Luces, aromatización, cocina, accesorios y mucho más. Envíos a todo el país.">
+
+  <meta property="og:title" content="HOGAR_NIDO 🌿">
+  <meta property="og:description" content="Ilumina • Aromatiza • Sentí">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #536b55;
+      --green-dark: #26392c;
+      --green-soft: #e8eee5;
+      --cream: #f7f4ed;
+      --cream-dark: #eee9dc;
+      --brown: #927866;
+      --text: #283129;
+      --muted: #747b73;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(38, 57, 44, .10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 5px 30px rgba(0,0,0,.06);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: .3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      background: var(--green);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+    }
+
+    .nav-btn:hover {
+      background: var(--green-dark);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 760px;
+      background:
+        linear-gradient(90deg, rgba(247,244,237,.98) 0%, rgba(247,244,237,.90) 43%, rgba(247,244,237,.15) 75%),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(83,107,85,.10);
+      color: var(--green);
+      padding: 9px 15px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+      color: var(--green-dark);
+    }
+
+    .hero h1 span {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 520px;
+      color: #5e665f;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      padding: 15px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--green-dark);
+      box-shadow: 0 12px 25px rgba(83,107,85,.25);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,.85);
+      color: var(--green-dark);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .benefits {
+      padding: 22px 0;
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .benefit-icon {
+      font-size: 23px;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1;
+      color: var(--green-dark);
+    }
+
+    .section-description {
+      max-width: 470px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================= */
+
+    .categories {
+      background: var(--cream);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 330px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      cursor: pointer;
+      color: white;
+    }
+
+    .category-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: .6s ease;
+    }
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 35%, rgba(15,25,17,.8));
+    }
+
+    .category-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .category-content {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      bottom: 22px;
+    }
+
+    .category-content span {
+      font-size: 12px;
+      opacity: .8;
+    }
+
+    .category-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      background: white;
+    }
+
+    .product-tools {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid #dce1da;
+      background: white;
+      padding: 10px 17px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      transition: .2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #dce1da;
+      padding: 10px 15px;
+      border-radius: 50px;
+      margin-bottom: 30px;
+      max-width: 330px;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      color: var(--text);
+      background: transparent;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #edf0eb;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      height: 290px;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .product-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      background: white;
+      padding: 7px 11px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-category {
+      color: var(--brown);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .product-name {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin: 7px 0;
+      color: var(--green-dark);
+    }
+
+    .product-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .view-product {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       BRAND
+    ========================= */
+
+    .brand-section {
+      background: var(--cream);
+    }
+
+    .brand-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .brand-image {
+      height: 570px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .brand-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-sticker {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      font-family: "Playfair Display", serif;
+      color: var(--green-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .brand-text h2 span {
+      color: var(--green);
+    }
+
+    .brand-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .quote {
+      border-left: 3px solid var(--green);
+      padding-left: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      color: var(--green-dark);
+      margin: 30px 0;
+    }
+
+    /* =========================
+       INSTAGRAM
+    ========================= */
+
+    .instagram {
+      padding-bottom: 0;
+    }
+
+    .instagram-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .instagram-head .section-description {
+      margin: 15px auto 0;
+    }
+
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .instagram-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .instagram-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .instagram-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .instagram-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(38,57,44,.55);
+      color: white;
+      opacity: 0;
+      transition: .3s;
+      font-size: 28px;
+    }
+
+    .instagram-item:hover .instagram-overlay {
+      opacity: 1;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 100px 0;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(110deg, rgba(38,57,44,.98), rgba(83,107,85,.90)),
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      border-radius: 32px;
+      padding: 75px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 64px);
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      opacity: .85;
+      line-height: 1.7;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--green-dark);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #202d23;
+      color: white;
+      padding: 65px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+    }
+
+    .footer-brand p {
+      color: #b6beb7;
+      max-width: 300px;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
+      color: #b6beb7;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #8f9891;
+      font-size: 12px;
+    }
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      z-index: 900;
+      box-shadow: 0 10px 30px rgba(37,211,102,.3);
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,24,17,.65);
+      backdrop-filter: blur(7px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      width: min(850px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 28px;
+      position: relative;
+      animation: modalIn .3s ease;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,.12);
+      cursor: pointer;
+      z-index: 3;
+      font-size: 20px;
+    }
+
+    .modal-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-image {
+      min-height: 450px;
+    }
+
+    .modal-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-info {
+      padding: 55px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-info .product-category {
+      margin-bottom: 10px;
+    }
+
+    .modal-info h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: var(--green-dark);
+    }
+
+    .modal-info p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        position: fixed;
+        top: 82px;
+        left: 20px;
+        right: 20px;
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .benefit-grid,
+      .category-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .brand-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .brand-image {
+        height: 450px;
+      }
+
+      .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 700px;
+        background:
+          linear-gradient(0deg, rgba(247,244,237,.98) 10%, rgba(247,244,237,.68) 60%, rgba(247,244,237,.15)),
+          url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80")
+          center/cover;
+        align-items: end;
+        padding-bottom: 70px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 8px;
+      }
+
+      .benefit {
+        font-size: 12px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 18px;
+      }
+
+      .product-tools {
+        margin-top: 25px;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .category-card {
+        height: 230px;
+        border-radius: 18px;
+      }
+
+      .category-content h3 {
+        font-size: 22px;
+      }
+
+      .product-image {
+        height: 210px;
+      }
+
+      .product-info {
+        padding: 14px;
+      }
+
+      .product-name {
+        font-size: 19px;
+      }
+
+      .product-info p {
+        font-size: 12px;
+      }
+
+      .brand-image {
+        height: 380px;
+      }
+
+      .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-box {
+        padding: 55px 22px;
+        border-radius: 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        display: block;
+        line-height: 1.8;
+      }
+
+      .modal-content {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-image {
+        min-height: 300px;
+        max-height: 350px;
+      }
+
+      .modal-info {
+        padding: 35px 25px;
+      }
+
+      .modal-info h2 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .category-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        height: 280px;
+      }
+
+      .product-image {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#inicio" class="logo">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text">HOGAR_NIDO</div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#instagram">Instagram</a>
+        <a class="nav-btn" href="https://wa.me/5493541202252" target="_blank">
+          WhatsApp
+        </a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            🌿 HOGAR_NIDO
+          </div>
+
+          <h1>
+            Hacé de tu casa<br>
+            tu <span>lugar favorito.</span>
+          </h1>
+
+          <p>
+            Luces, aromas, productos para tu cocina, accesorios
+            y esos pequeños detalles que hacen que un hogar
+            se sienta realmente especial.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#productos" class="btn btn-primary">
+              Descubrir productos →
+            </a>
+
+            <a href="https://wa.me/5493541202252" target="_blank" class="btn btn-light">
+              💬 Consultanos
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BENEFICIOS
+    ========================== -->
+
+    <div class="benefits">
+      <div class="container benefit-grid">
+
+        <div class="benefit">
+          <span class="benefit-icon">🇦🇷</span>
+          Envíos a todo el país
+        </div>
+
+        <div class="benefit">
+          <span class="benefit-icon">✨</span>
+          Productos seleccionados
+        </div>
+
+        <div class="benefit">
+          <span class="benefit-icon">💬</span>
+          Atención personalizada
+        </div>
+
+        <div class="benefit">
+          <span class="benefit-icon">🏠</span>
+          Todo para tu hogar
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+
+    <section class="categories" id="categorias">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">Explorá HOGAR_NIDO</div>
+            <h2 class="section-title">
+              Encontrá tu<br>nuevo favorito.
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Desde una luz que cambia por completo un ambiente
+            hasta ese accesorio que estabas buscando.
+          </p>
+
+        </div>
+
+        <div class="category-grid">
+
+          <div class="category-card" onclick="filterProducts('Iluminación')">
+            <img
+              src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80"
+              alt="Iluminación">
+            <div class="category-content">
+              <span>01 · AMBIENTE</span>
+              <h3>Iluminación</h3>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('Aromas')">
+            <img
+              src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=80"
+              alt="Aromas">
+            <div class="category-content">
+              <span>02 · BIENESTAR</span>
+              <h3>Aromas</h3>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('Cocina')">
+            <img
+              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80"
+              alt="Cocina">
+            <div class="category-content">
+              <span>03 · COCINA</span>
+              <h3>Cocina</h3>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="filterProducts('Accesorios')">
+            <img
+              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80"
+              alt="Accesorios">
+            <div class="category-content">
+              <span>04 · DETALLES</span>
+              <h3>Accesorios</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PRODUCTOS
+    ========================== -->
+
+    <section class="products" id="productos">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">Nuestros favoritos</div>
+            <h2 class="section-title">
+              Productos que<br>dan ganas de quedarse.
+            </h2>
+          </div>
+
+          <div class="product-tools">
+
+            <button class="filter-btn active" onclick="filterProducts('Todos', this)">
+              Todos
+            </button>
+
+            <button class="filter-btn" onclick="filterProducts('Iluminación', this)">
+              Luces
+            </button>
+
+            <button class="filter-btn" onclick="filterProducts('Aromas', this)">
+              Aromas
+            </button>
+
+            <button class="filter-btn" onclick="filterProducts('Cocina', this)">
+              Cocina
+            </button>
+
+            <button class="filter-btn" onclick="filterProducts('Accesorios', this)">
+              Accesorios
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="search-box">
+          🔎
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar productos..."
+          >
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         NOSOTROS
+    ========================== -->
+
+    <section class="brand-section" id="nosotros">
+      <div class="container brand-layout">
+
+        <div class="brand-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85"
+            alt="HOGAR_NIDO">
+
+          <div class="brand-sticker">
+            ILUMINA<br>
+            AROMATIZA<br>
+            SENTÍ
+          </div>
+
+        </div>
+
+        <div class="brand-text">
+
+          <div class="section-kicker">
+            Nuestra esencia
+          </div>
+
+          <h2>
+            Pequeños detalles.<br>
+            <span>Grandes sensaciones.</span>
+          </h2>
+
+          <p>
+            En HOGAR_NIDO creemos que un hogar no se trata solamente
+            de muebles y objetos. Se trata de cómo nos hace sentir.
+          </p>
+
+          <p>
+            Por eso seleccionamos productos pensados para transformar
+            espacios cotidianos en lugares cálidos, funcionales
+            y llenos de personalidad.
+          </p>
+
+          <div class="quote">
+            “Tu hogar debería sentirse tan lindo como se ve.”
+          </div>
+
+          <a
+            href="https://www.instagram.com/hogar_nido/"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Conocé HOGAR_NIDO →
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         INSTAGRAM
+    ========================== -->
+
+    <section class="instagram" id="instagram">
+
+      <div class="instagram-head">
+
+        <div class="section-kicker">
+          Seguinos
+        </div>
+
+        <h2 class="section-title">
+          @hogar_nido
+        </h2>
+
+        <p class="section-description">
+          Inspirate, descubrí novedades y conocé más de nuestros productos.
+        </p>
+
+      </div>
+
+      <div class="instagram-grid">
+
+        <a
+          href="https://www.instagram.com/hogar_nido/"
+          target="_blank"
+          class="instagram-item"
+        >
+          <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="instagram-overlay">◎</div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/hogar_nido/"
+          target="_blank"
+          class="instagram-item"
+        >
+          <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="instagram-overlay">◎</div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/hogar_nido/"
+          target="_blank"
+          class="instagram-item"
+        >
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="instagram-overlay">◎</div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/hogar_nido/"
+          target="_blank"
+          class="instagram-item"
+        >
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="instagram-overlay">◎</div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/hogar_nido/"
+          target="_blank"
+          class="instagram-item"
+        >
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80" alt="">
+          <div class="instagram-overlay">◎</div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <h2>¿Encontraste algo que te gustó?</h2>
+
+          <p>
+            Escribinos y te ayudamos con toda la información
+            que necesitás. Hacemos envíos a todo el país 🇦🇷
+          </p>
+
+          <a
+            href="https://wa.me/5493541202252"
+            target="_blank"
+            class="btn btn-white"
+          >
+            💬 Consultar por WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">HOGAR_NIDO</div>
+          </div>
+
+          <p>
+            Ilumina • Aromatiza • Sentí 💖
+            <br>
+            Todo eso que hace de tu casa un hogar.
+          </p>
+
+        </div>
+
+        <div>
+          <div class="footer-title">Explorá</div>
+
+          <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Seguinos</div>
+
+          <div class="footer-links">
+            <a href="https://www.instagram.com/hogar_nido/" target="_blank">
+              Instagram
+            </a>
+
+            <a href="https://www.threads.com/@hogar_nido" target="_blank">
+              Threads
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Contacto</div>
+
+          <div class="footer-links">
+
+            <a
+              href="https://wa.me/5493541202252"
+              target="_blank"
+            >
+              WhatsApp
+            </a>
+
+            <span>Envíos a todo el país 🇦🇷</span>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 HOGAR_NIDO. Todos los derechos reservados.
+        </span>
+
+        <span>
+          Hecho con 🌿 para tu hogar.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP FLOATING
+  ========================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/5493541202252"
+    target="_blank"
+    aria-label="Contactar por WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- =========================
+       PRODUCT MODAL
+  ========================== -->
+
+  <div class="modal" id="productModal">
+
+    <div class="modal-box">
+
+      <button class="modal-close" onclick="closeModal()">
+        ×
+      </button>
+
+      <div class="modal-content">
+
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-info">
+
+          <div class="product-category" id="modalCategory"></div>
+
+          <h2 id="modalTitle"></h2>
+
+          <p id="modalDescription"></p>
+
+          <a
+            id="modalWhatsapp"
+            href="#"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            💬 Consultar producto
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       PRODUCT DATA
+    ========================== */
+
+    const products = [
+
+      {
+        id: 1,
+        name: "Lámpara Nido",
+        category: "Iluminación",
+        tag: "DESTACADO",
+        description: "Una pieza cálida y decorativa para darle personalidad a cualquier rincón de tu hogar.",
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 2,
+        name: "Luz Decorativa",
+        category: "Iluminación",
+        tag: "NOVEDAD",
+        description: "Iluminación pensada para crear ambientes cálidos, relajados y especiales.",
+        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 3,
+        name: "Vela Aromática",
+        category: "Aromas",
+        tag: "FAVORITO",
+        description: "Aromas suaves para transformar tus espacios y crear momentos de relax.",
+        image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 4,
+        name: "Difusor de Aromas",
+        category: "Aromas",
+        tag: "NUEVO",
+        description: "Una forma simple y elegante de llenar tus ambientes de una fragancia agradable.",
+        image: "https://images.unsplash.com/photo-1602874801006-e26b8f1f6e90?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 5,
+        name: "Set para Cocina",
+        category: "Cocina",
+        tag: "DESTACADO",
+        description: "Accesorios prácticos y lindos para disfrutar todavía más tu cocina.",
+        image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 6,
+        name: "Accesorios de Cocina",
+        category: "Cocina",
+        tag: "FAVORITO",
+        description: "Pequeños detalles que combinan funcionalidad y diseño.",
+        image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 7,
+        name: "Organizador Nido",
+        category: "Accesorios",
+        tag: "NOVEDAD",
+        description: "Ordená tus espacios de una manera práctica y estética.",
+        image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=85"
+      },
+
+      {
+        id: 8,
+        name: "Detalle Decorativo",
+        category: "Accesorios",
+        tag: "TOP",
+        description: "Ese detalle que completa un ambiente y le da un toque único.",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
+      }
+
+    ];
+
+
+    let currentCategory = "Todos";
+
+
+    /* =========================
+       RENDER PRODUCTS
+    ========================== */
+
+    function renderProducts() {
+
+      const grid = document.getElementById("productGrid");
+      const search = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+      const filtered = products.filter(product => {
+
+        const categoryMatch =
+          currentCategory === "Todos" ||
+          product.category === currentCategory;
+
+        const searchMatch =
+          product.name.toLowerCase().includes(search) ||
+          product.category.toLowerCase().includes(search) ||
+          product.description.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
+
+      });
+
+
+      grid.innerHTML = "";
+
+
+      if (!filtered.length) {
+
+        grid.innerHTML = `
+          <div style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:70px 20px;
+            color:#747b73;
+          ">
+            <div style="font-size:45px;margin-bottom:15px;">🌿</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:30px;color:#26392c;">
+              No encontramos productos
+            </h3>
+            <p style="margin-top:10px;">
+              Probá con otra búsqueda o categoría.
+            </p>
+          </div>
+        `;
+
+        return;
+      }
+
+
+      filtered.forEach(product => {
+
+        const card = document.createElement("article");
+
+        card.className = "product-card";
+
+        card.onclick = () => openModal(product.id);
+
+        card.innerHTML = `
+
+          <div class="product-image">
+
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
+
+            <div class="product-tag">
+              ${product.tag}
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ${product.category}
+            </div>
+
+            <div class="product-name">
+              ${product.name}
+            </div>
+
+            <p>
+              ${product.description}
+            </p>
+
+            <div class="product-bottom">
+              <span class="view-product">
+                Ver producto →
+              </span>
+
+              <span>
+                💚
+              </span>
+            </div>
+
+          </div>
+
+        `;
+
+        grid.appendChild(card);
+
+      });
+
+    }
+
+
+    /* =========================
+       FILTER
+    ========================== */
+
+    function filterProducts(category, button = null) {
+
+      currentCategory = category;
+
+      if (button) {
+
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+      }
+
+      renderProducts();
+
+      document
+        .getElementById("productos")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    document
+      .getElementById("searchInput")
+      .addEventListener("input", renderProducts);
+
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    function openModal(id) {
+
+      const product = products.find(p => p.id === id);
+
+      if (!product) return;
+
+      document.getElementById("modalImage").src = product.image;
+
+      document.getElementById("modalImage").alt = product.name;
+
+      document.getElementById("modalCategory").textContent =
+        product.category;
+
+      document.getElementById("modalTitle").textContent =
+        product.name;
+
+      document.getElementById("modalDescription").textContent =
+        product.description;
+
+
+      const message =
+        `Hola HOGAR_NIDO 🌿, quería consultar por el producto "${product.name}".`;
+
+      document.getElementById("modalWhatsapp").href =
+        `https://wa.me/5493541202252?text=${encodeURIComponent(message)}`;
+
+
+      document
+        .getElementById("productModal")
+        .classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeModal() {
+
+      document
+        .getElementById("productModal")
+        .classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    document
+      .getElementById("productModal")
+      .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+          closeModal();
+        }
+
+      });
+
+
+    document.addEventListener("keydown", function(e) {
+
+      if (e.key === "Escape") {
+        closeModal();
+      }
+
+    });
+
+
+    /* =========================
+       HEADER SCROLL
+    ========================== */
+
+    window.addEventListener("scroll", () => {
+
+      const header = document.getElementById("header");
+
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("open")
+          ? "×"
+          : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.textContent = "☰";
+
+        });
+
+      });
+
+
+    /* =========================
+       INITIALIZE
+    ========================== */
+
+    renderProducts();
+
+  </script>
+
+</body>
+</html>
+```
