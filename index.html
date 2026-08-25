@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -10,9 +9,9 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <!-- =====================================================
+  <!-- =========================
        SEO
-  ====================================================== -->
+  ========================== -->
 
   <title>
     Hogar Nido | Electrodomésticos y productos para el hogar
@@ -39,9 +38,9 @@
   >
 
 
-  <!-- =====================================================
+  <!-- =========================
        OPEN GRAPH
-  ====================================================== -->
+  ========================== -->
 
   <meta
     property="og:type"
@@ -58,16 +57,16 @@
     content="Descubrí nuestros electrodomésticos y productos para cocina, limpieza y hogar."
   >
 
-  <!-- REEMPLAZAR POR EL DOMINIO REAL CUANDO LO TENGAS -->
+  <!-- CAMBIAR CUANDO TENGAS EL DOMINIO -->
 
   <meta
     property="og:url"
-    content="https://hogar-nido.onrender.com/"
+    content="https://tudominio.com/"
   >
 
   <meta
     property="og:image"
-    content="https://iili.io/CDS3jLb.jpg"
+    content="https://iili.io/CD8LzBe.png"
   >
 
   <meta
@@ -86,9 +85,9 @@
   >
 
 
-  <!-- =====================================================
-       TWITTER / X CARD
-  ====================================================== -->
+  <!-- =========================
+       TWITTER CARD
+  ========================== -->
 
   <meta
     name="twitter:card"
@@ -111,9 +110,9 @@
   >
 
 
-  <!-- =====================================================
+  <!-- =========================
        FAVICON
-  ====================================================== -->
+  ========================== -->
 
   <link
     rel="icon"
@@ -122,9 +121,9 @@
   >
 
 
-  <!-- =====================================================
+  <!-- =========================
        FUENTES
-  ====================================================== -->
+  ========================== -->
 
   <link
     rel="preconnect"
@@ -147,7 +146,7 @@
 
     /* =====================================================
        VARIABLES
-    ====================================================== */
+    ===================================================== */
 
     :root {
 
@@ -163,29 +162,22 @@
 
       --verde: #e7eee3;
 
-      --radio: 25px;
-
     }
 
 
     /* =====================================================
        RESET
-    ====================================================== */
+    ===================================================== */
 
     * {
-
       margin: 0;
       padding: 0;
-
       box-sizing: border-box;
-
     }
 
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
 
@@ -208,122 +200,91 @@
 
 
     body.modal-open {
-
-      overflow:
-        hidden;
-
+      overflow: hidden;
     }
 
 
     img {
-
-      display:
-        block;
-
-      max-width:
-        100%;
-
+      display: block;
+      max-width: 100%;
     }
 
 
     a {
-
-      color:
-        inherit;
-
+      color: inherit;
     }
 
 
     button {
-
-      font-family:
-        inherit;
-
+      font-family: inherit;
     }
 
 
     /* =====================================================
        LOGO NEÓN SUTIL
-    ====================================================== */
+    ===================================================== */
 
     .neon-logo {
 
-      position:
-        relative;
+      position: relative;
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
     }
 
 
     .neon-logo::before {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      width:
-        75%;
+      width: 72%;
+      height: 52%;
 
-      height:
-        55%;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
-        rgba(155, 93, 229, .14);
+        rgba(155, 93, 229, .12);
 
       filter:
-        blur(22px);
+        blur(24px);
 
       animation:
-        subtleGlow 4s ease-in-out infinite;
+        subtleGlow 4.5s ease-in-out infinite;
 
-      z-index:
-        0;
+      z-index: 0;
 
     }
 
 
     .neon-logo img {
 
-      position:
-        relative;
+      position: relative;
 
-      z-index:
-        2;
+      z-index: 2;
 
-      width:
-        100%;
+      width: 100%;
+      height: 100%;
 
-      height:
-        100%;
-
-      object-fit:
-        contain;
+      object-fit: contain;
 
       filter:
         drop-shadow(
           0 0 3px
-          rgba(155,93,229,.40)
+          rgba(155,93,229,.38)
         )
         drop-shadow(
-          0 0 7px
-          rgba(155,93,229,.20)
+          0 0 8px
+          rgba(155,93,229,.16)
         );
 
       animation:
-        subtleLogoGlow 4s ease-in-out infinite;
+        subtleLogoGlow 4.5s ease-in-out infinite;
 
     }
 
@@ -332,23 +293,13 @@
 
       0%,
       100% {
-
-        opacity:
-          .55;
-
-        transform:
-          scale(.96);
-
+        opacity: .5;
+        transform: scale(.97);
       }
 
       50% {
-
-        opacity:
-          .85;
-
-        transform:
-          scale(1.03);
-
+        opacity: .78;
+        transform: scale(1.02);
       }
 
     }
@@ -362,11 +313,11 @@
         filter:
           drop-shadow(
             0 0 3px
-            rgba(155,93,229,.40)
+            rgba(155,93,229,.38)
           )
           drop-shadow(
-            0 0 7px
-            rgba(155,93,229,.20)
+            0 0 8px
+            rgba(155,93,229,.16)
           );
 
       }
@@ -376,11 +327,11 @@
         filter:
           drop-shadow(
             0 0 4px
-            rgba(155,93,229,.60)
+            rgba(155,93,229,.50)
           )
           drop-shadow(
-            0 0 11px
-            rgba(155,93,229,.32)
+            0 0 10px
+            rgba(155,93,229,.22)
           );
 
       }
@@ -390,39 +341,26 @@
 
     /* =====================================================
        HEADER
-    ====================================================== */
+    ===================================================== */
 
     .navbar {
 
-      position:
-        fixed;
+      position: fixed;
 
-      top:
-        0;
+      top: 0;
+      left: 0;
 
-      left:
-        0;
+      width: 100%;
+      height: 78px;
 
-      width:
-        100%;
+      z-index: 1000;
 
-      height:
-        78px;
+      display: flex;
 
-      z-index:
-        1000;
+      align-items: center;
+      justify-content: space-between;
 
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        space-between;
-
-      padding:
-        0 6%;
+      padding: 0 6%;
 
       background:
         rgba(255,255,255,.90);
@@ -437,8 +375,7 @@
         1px solid
         rgba(0,0,0,.06);
 
-      transition:
-        .3s;
+      transition: .3s;
 
     }
 
@@ -454,73 +391,56 @@
 
     .brand {
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        9px;
+      gap: 9px;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
     }
 
 
     .header-logo {
 
-      width:
-        75px;
-
-      height:
-        62px;
+      width: 75px;
+      height: 62px;
 
     }
 
 
     .brand-name {
 
-      font-size:
-        17px;
+      font-size: 17px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
     }
 
 
     .nav-links {
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        30px;
+      gap: 30px;
 
     }
 
 
     .nav-links a {
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      font-weight:
-        600;
+      font-weight: 600;
 
-      color:
-        #363238;
+      color: #363238;
 
-      transition:
-        .25s;
+      transition: .25s;
 
     }
 
@@ -560,24 +480,21 @@
 
     /* =====================================================
        HERO
-    ====================================================== */
+    ===================================================== */
 
     .hero {
 
-      min-height:
-        100vh;
+      min-height: 100vh;
 
-      position:
-        relative;
+      position: relative;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      overflow:
-        hidden;
+      justify-content: center;
+
+      overflow: hidden;
 
       background:
 
@@ -585,61 +502,50 @@
           90deg,
           rgba(25,20,29,.88),
           rgba(25,20,29,.60),
-          rgba(25,20,29,.15)
+          rgba(25,20,29,.20)
         ),
 
         url("https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=2200&q=90");
 
-      background-size:
-        cover;
+      background-size: cover;
 
-      background-position:
-        center;
+      background-position: center;
 
     }
 
 
     .hero::before {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      inset:
-        0;
+      inset: 0;
 
       background:
 
         radial-gradient(
-          circle at 20% 40%,
-          rgba(155,93,229,.22),
-          transparent 35%
+          circle at 50% 45%,
+          rgba(155,93,229,.14),
+          transparent 38%
         );
+
+      pointer-events: none;
 
     }
 
 
     .hero::after {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      left:
-        0;
+      left: 0;
+      right: 0;
+      bottom: 0;
 
-      right:
-        0;
-
-      bottom:
-        0;
-
-      height:
-        140px;
+      height: 140px;
 
       background:
         linear-gradient(
@@ -647,59 +553,51 @@
           var(--fondo)
         );
 
+      pointer-events: none;
+
     }
 
+
+    /*
+       IMPORTANTE:
+       TODO EL CONTENIDO DEL HERO
+       ESTÁ CENTRADO.
+    */
 
     .hero-content {
 
-      position:
-        relative;
+      position: relative;
 
-      z-index:
-        3;
+      z-index: 3;
 
-      width:
-        90%;
+      width: 90%;
 
-      max-width:
-        1200px;
+      max-width: 1200px;
 
-      margin:
-        auto;
+      margin: 0 auto;
 
-      padding-top:
-        80px;
+      padding-top: 75px;
 
-    }
+      display: flex;
 
+      flex-direction: column;
 
-    .hero-logo {
+      align-items: center;
 
-      width:
-        380px;
+      justify-content: center;
 
-      max-width:
-        75vw;
-
-      height:
-        190px;
-
-      margin-bottom:
-        10px;
+      text-align: center;
 
     }
 
 
     .hero-kicker {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      padding:
-        8px 15px;
+      padding: 8px 15px;
 
-      border-radius:
-        50px;
+      border-radius: 50px;
 
       background:
         rgba(255,255,255,.12);
@@ -708,34 +606,47 @@
         1px solid
         rgba(255,255,255,.28);
 
-      color:
-        white;
+      color: white;
 
-      font-size:
-        11px;
+      font-size: 11px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      letter-spacing:
-        1.5px;
+      letter-spacing: 1.5px;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
-      margin-bottom:
-        8px;
+      margin-bottom: 12px;
+
+    }
+
+
+    .hero-logo {
+
+      width: 380px;
+
+      max-width: 75vw;
+
+      height: 190px;
+
+      margin: 0 auto 10px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
 
     }
 
 
     .hero h1 {
 
-      max-width:
-        700px;
+      max-width: 700px;
 
-      color:
-        white;
+      margin: 0 auto 20px;
+
+      color: white;
 
       font-family:
         "Playfair Display",
@@ -744,80 +655,65 @@
       font-size:
         clamp(43px,6vw,72px);
 
-      line-height:
-        1.03;
-
-      margin-bottom:
-        20px;
+      line-height: 1.03;
 
     }
 
 
     .hero p {
 
-      max-width:
-        590px;
+      max-width: 590px;
+
+      margin: 0 auto;
 
       color:
         rgba(255,255,255,.90);
 
-      font-size:
-        18px;
+      font-size: 18px;
 
-      line-height:
-        1.7;
+      line-height: 1.7;
 
     }
 
 
     .hero-buttons {
 
-      display:
-        flex;
+      display: flex;
 
-      gap:
-        13px;
+      justify-content: center;
 
-      flex-wrap:
-        wrap;
+      align-items: center;
 
-      margin-top:
-        28px;
+      gap: 13px;
+
+      flex-wrap: wrap;
+
+      margin-top: 28px;
 
     }
 
 
     .button {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      padding:
-        14px 24px;
+      padding: 14px 24px;
 
-      border-radius:
-        50px;
+      border-radius: 50px;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      border:
-        none;
+      border: none;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      transition:
-        .3s;
+      transition: .3s;
 
     }
 
@@ -873,7 +769,7 @@
 
     /* =====================================================
        INTRO
-    ====================================================== */
+    ===================================================== */
 
     .intro {
 
@@ -1074,7 +970,7 @@
 
     /* =====================================================
        CATEGORÍAS
-    ====================================================== */
+    ===================================================== */
 
     .categories-section {
 
@@ -1267,7 +1163,7 @@
 
     /* =====================================================
        PRODUCTOS
-    ====================================================== */
+    ===================================================== */
 
     .products-section {
 
@@ -1522,7 +1418,7 @@
 
     /* =====================================================
        BANNER
-    ====================================================== */
+    ===================================================== */
 
     .promo {
 
@@ -1621,7 +1517,7 @@
 
     /* =====================================================
        CONTACTO
-    ====================================================== */
+    ===================================================== */
 
     .contact {
 
@@ -1696,7 +1592,7 @@
 
     /* =====================================================
        FOOTER
-    ====================================================== */
+    ===================================================== */
 
     footer {
 
@@ -1791,8 +1687,8 @@
 
 
     /* =====================================================
-       REDES SOCIALES FLOTANTES
-    ====================================================== */
+       REDES FLOTANTES
+    ===================================================== */
 
     .floating-social {
 
@@ -1921,7 +1817,7 @@
 
     /* =====================================================
        MODAL
-    ====================================================== */
+    ===================================================== */
 
     .modal {
 
@@ -2298,7 +2194,7 @@
 
     /* =====================================================
        RESPONSIVE
-    ====================================================== */
+    ===================================================== */
 
     @media (max-width: 1050px) {
 
@@ -2385,7 +2281,13 @@
           90%;
 
         padding-top:
-          40px;
+          50px;
+
+        align-items:
+          center;
+
+        text-align:
+          center;
 
       }
 
@@ -2395,8 +2297,14 @@
         width:
           290px;
 
+        max-width:
+          80vw;
+
         height:
           160px;
+
+        margin:
+          0 auto 10px;
 
       }
 
@@ -2406,6 +2314,12 @@
         font-size:
           43px;
 
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+
       }
 
 
@@ -2413,6 +2327,20 @@
 
         font-size:
           15px;
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+
+      }
+
+
+      .hero-buttons {
+
+        justify-content:
+          center;
 
       }
 
@@ -2545,7 +2473,7 @@
       }
 
 
-      /* MODAL MOBILE */
+      /* MODAL */
 
       .modal {
 
@@ -2645,7 +2573,7 @@
 
   <!-- =====================================================
        HEADER
-  ====================================================== -->
+  ===================================================== -->
 
   <header
     class="navbar"
@@ -2704,7 +2632,7 @@
 
   <!-- =====================================================
        HERO
-  ====================================================== -->
+  ===================================================== -->
 
   <section
     class="hero"
@@ -2713,10 +2641,13 @@
 
     <div class="hero-content">
 
+
       <span class="hero-kicker">
         Electrodomésticos · Cocina · Hogar
       </span>
 
+
+      <!-- LOGO CENTRADO -->
 
       <div
         class="neon-logo hero-logo"
@@ -2769,7 +2700,7 @@
 
   <!-- =====================================================
        INTRO
-  ====================================================== -->
+  ===================================================== -->
 
   <section class="intro">
 
@@ -2820,7 +2751,7 @@
 
   <!-- =====================================================
        CATEGORÍAS
-  ====================================================== -->
+  ===================================================== -->
 
   <section
     class="categories-section"
@@ -2857,7 +2788,7 @@
 
         <img
           src="https://iili.io/CD8wTAv.webp"
-          alt="Cocina"
+          alt="Productos de cocina"
           loading="lazy"
         >
 
@@ -2883,7 +2814,7 @@
 
         <img
           src="https://iili.io/CD8OMn2.webp"
-          alt="Pequeños electrodomésticos"
+          alt="Electrodomésticos"
           loading="lazy"
         >
 
@@ -2909,7 +2840,7 @@
 
         <img
           src="https://iili.io/CD8SAdP.png"
-          alt="Limpieza"
+          alt="Productos de limpieza"
           loading="lazy"
         >
 
@@ -2935,7 +2866,7 @@
 
         <img
           src="https://iili.io/CD8UFGR.png"
-          alt="Hogar"
+          alt="Productos para el hogar"
           loading="lazy"
         >
 
@@ -2962,7 +2893,7 @@
 
   <!-- =====================================================
        PRODUCTOS
-  ====================================================== -->
+  ===================================================== -->
 
   <section
     class="products-section"
@@ -2992,11 +2923,7 @@
     <div
       class="products-grid"
       id="productsGrid"
-    >
-
-      <!-- Los productos se generan automáticamente -->
-
-    </div>
+    ></div>
 
   </section>
 
@@ -3004,7 +2931,7 @@
 
   <!-- =====================================================
        BANNER
-  ====================================================== -->
+  ===================================================== -->
 
   <section class="promo">
 
@@ -3049,7 +2976,7 @@
 
   <!-- =====================================================
        CONTACTO
-  ====================================================== -->
+  ===================================================== -->
 
   <section
     class="contact"
@@ -3105,7 +3032,7 @@
 
   <!-- =====================================================
        FOOTER
-  ====================================================== -->
+  ===================================================== -->
 
   <footer id="footer">
 
@@ -3132,8 +3059,8 @@
 
 
   <!-- =====================================================
-       BOTONES FLOTANTES
-  ====================================================== -->
+       REDES FLOTANTES
+  ===================================================== -->
 
   <div
     class="floating-social"
@@ -3183,7 +3110,7 @@
 
   <!-- =====================================================
        MODAL PRODUCTO
-  ====================================================== -->
+  ===================================================== -->
 
   <div
     class="modal"
@@ -3220,28 +3147,24 @@
         <span
           class="modal-category"
           id="modalCategory"
-        >
-        </span>
+        ></span>
 
 
         <h2
           id="modalTitle"
-        >
-        </h2>
+        ></h2>
 
 
         <p
           class="modal-description"
           id="modalDescription"
-        >
-        </p>
+        ></p>
 
 
         <div
           class="modal-price"
           id="modalPrice"
-        >
-        </div>
+        ></div>
 
 
         <div class="modal-actions">
@@ -3263,7 +3186,6 @@
             class="button modal-secondary"
           >
             Seguir viendo
-
           </button>
 
 
@@ -3280,36 +3202,35 @@
 
   <!-- =====================================================
        JAVASCRIPT
-  ====================================================== -->
+  ===================================================== -->
 
   <script>
 
     /* =====================================================
        CONFIGURACIÓN
-    ====================================================== */
+    ===================================================== */
 
     /*
-      CAMBIÁ ESTOS DATOS CUANDO TENGAS
-      LA INFORMACIÓN REAL DEL NEGOCIO.
+      CAMBIAR ESTE NÚMERO POR EL WHATSAPP REAL.
+
+      Formato:
+      549 + código de área + número
+
+      Ejemplo:
+      5491123456789
     */
 
     const WHATSAPP_NUMBER =
       "5490000000000";
 
 
-    /*
-      PRODUCTOS
 
-      Acá podés cambiar:
-
-      - nombre
-      - categoría
-      - precio
-      - descripción
-      - imagen
-    */
+    /* =====================================================
+       PRODUCTOS
+    ===================================================== */
 
     const products = [
+
 
       {
         id: 1,
@@ -3496,7 +3417,7 @@
 
     /* =====================================================
        ELEMENTOS
-    ====================================================== */
+    ===================================================== */
 
     const productsGrid =
       document.getElementById(
@@ -3560,8 +3481,8 @@
 
 
     /* =====================================================
-       GENERAR PRODUCTOS
-    ====================================================== */
+       CREAR PRODUCTOS
+    ===================================================== */
 
     function renderProducts() {
 
@@ -3580,12 +3501,6 @@
 
           article.className =
             "product";
-
-
-          article.setAttribute(
-            "data-id",
-            product.id
-          );
 
 
           article.innerHTML = `
@@ -3652,13 +3567,15 @@
 
 
     /* =====================================================
-       ABRIR MODAL
-    ====================================================== */
+       ABRIR PRODUCTO
+    ===================================================== */
 
     function openProduct(product) {
 
+
       modalImage.src =
         product.image;
+
 
       modalImage.alt =
         product.name;
@@ -3679,11 +3596,6 @@
       modalPrice.textContent =
         product.price;
 
-
-      /*
-        Mensaje automático
-        para WhatsApp.
-      */
 
       const message =
         `Hola! Quisiera consultar por el producto: ${product.name}`;
@@ -3713,8 +3625,8 @@
 
 
     /* =====================================================
-       CERRAR MODAL
-    ====================================================== */
+       CERRAR PRODUCTO
+    ===================================================== */
 
     function closeProduct() {
 
@@ -3736,7 +3648,6 @@
     }
 
 
-
     modalClose.addEventListener(
       "click",
       closeProduct
@@ -3748,11 +3659,6 @@
       closeProduct
     );
 
-
-    /*
-      Cerrar haciendo clic
-      fuera del producto.
-    */
 
     modal.addEventListener(
       "click",
@@ -3769,10 +3675,6 @@
       }
     );
 
-
-    /*
-      Cerrar con ESC.
-    */
 
     document.addEventListener(
       "keydown",
@@ -3793,8 +3695,8 @@
 
 
     /* =====================================================
-       HEADER AL HACER SCROLL
-    ====================================================== */
+       HEADER SCROLL
+    ===================================================== */
 
     const navbar =
       document.getElementById(
@@ -3828,8 +3730,9 @@
 
 
     /* =====================================================
-       OCULTAR REDES EN FOOTER
-    ====================================================== */
+       REDES FLOTANTES
+       SE OCULTAN AL LLEGAR AL FOOTER
+    ===================================================== */
 
     const floatingSocial =
       document.getElementById(
@@ -3873,8 +3776,7 @@
         },
 
         {
-          threshold:
-            0.05
+          threshold: 0.05
         }
 
       );
@@ -3888,12 +3790,11 @@
 
     /* =====================================================
        INICIALIZAR
-    ====================================================== */
+    ===================================================== */
 
     renderProducts();
 
   </script>
-
 
 </body>
 
