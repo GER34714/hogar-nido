@@ -1,40 +1,52 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HOGAR_NIDO | Ilumina • Aromatiza • Sentí</title>
-  <meta name="description" content="HOGAR_NIDO 🌿 Luces, aromatización, cocina, accesorios y mucho más. Envíos a todo el país.">
+  <title>Hogar Nido | Electrodomésticos y productos para el hogar</title>
 
-  <meta property="og:title" content="HOGAR_NIDO 🌿">
-  <meta property="og:description" content="Ilumina • Aromatiza • Sentí">
-  <meta property="og:type" content="website">
+  <meta
+    name="description"
+    content="Hogar Nido - Electrodomésticos, productos para cocina, limpieza y hogar."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     :root {
-      --green: #536b55;
-      --green-dark: #26392c;
-      --green-soft: #e8eee5;
-      --cream: #f7f4ed;
-      --cream-dark: #eee9dc;
-      --brown: #927866;
-      --text: #283129;
-      --muted: #747b73;
-      --white: #ffffff;
-      --shadow: 0 18px 50px rgba(38, 57, 44, .10);
-      --radius: 24px;
+      --violeta: #9b5de5;
+      --violeta-dark: #64339a;
+      --violeta-light: #eee4f8;
+
+      --negro: #18161a;
+      --gris: #706a74;
+
+      --fondo: #faf9fb;
+      --blanco: #ffffff;
+
+      --verde: #e7eee3;
+
+      --radio: 25px;
     }
 
+
+    /* =========================================
+       RESET
+    ========================================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -43,1930 +55,2438 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: #fff;
+      color: var(--negro);
+      background: var(--fondo);
       overflow-x: hidden;
     }
 
     img {
-      width: 100%;
       display: block;
-    }
-
-    button,
-    input {
-      font: inherit;
+      max-width: 100%;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
     }
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
+
+    /* =========================================
+       LOGO - NEÓN VIOLETA SUTIL
+    ========================================= */
+
+    .neon-logo {
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    .neon-logo::before {
+      content: "";
 
-    header {
+      position: absolute;
+
+      width: 75%;
+      height: 55%;
+
+      border-radius: 50%;
+
+      background:
+        rgba(155, 93, 229, 0.14);
+
+      filter: blur(22px);
+
+      animation:
+        subtleGlow 4s ease-in-out infinite;
+
+      z-index: 0;
+    }
+
+    .neon-logo img {
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 0 3px
+          rgba(155, 93, 229, .40)
+        )
+        drop-shadow(
+          0 0 7px
+          rgba(155, 93, 229, .20)
+        );
+
+      animation:
+        subtleLogoGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes subtleGlow {
+
+      0%,
+      100% {
+        opacity: .55;
+        transform: scale(.96);
+      }
+
+      50% {
+        opacity: .85;
+        transform: scale(1.03);
+      }
+
+    }
+
+    @keyframes subtleLogoGlow {
+
+      0%,
+      100% {
+        filter:
+          drop-shadow(
+            0 0 3px
+            rgba(155, 93, 229, .40)
+          )
+          drop-shadow(
+            0 0 7px
+            rgba(155, 93, 229, .20)
+          );
+      }
+
+      50% {
+        filter:
+          drop-shadow(
+            0 0 4px
+            rgba(155, 93, 229, .60)
+          )
+          drop-shadow(
+            0 0 11px
+            rgba(155, 93, 229, .32)
+          );
+      }
+
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .navbar {
+
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
+      height: 78px;
+
       z-index: 1000;
-      transition: .3s ease;
-    }
 
-    header.scrolled {
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 5px 30px rgba(0,0,0,.06);
-    }
-
-    .nav {
-      height: 82px;
       display: flex;
+
       align-items: center;
       justify-content: space-between;
-    }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      padding:
+        0 6%;
 
-    .logo-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-    }
+      background:
+        rgba(255, 255, 255, .90);
 
-    .logo-text {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+      backdrop-filter:
+        blur(18px);
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 14px;
-      font-weight: 600;
-    }
+      -webkit-backdrop-filter:
+        blur(18px);
 
-    .nav-links a {
-      position: relative;
-    }
+      border-bottom:
+        1px solid rgba(0, 0, 0, .06);
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 2px;
-      background: var(--green);
       transition: .3s;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
+    .navbar.scrolled {
+
+      box-shadow:
+        0 10px 35px
+        rgba(60, 30, 80, .10);
     }
 
-    .nav-btn {
-      background: var(--green);
-      color: white;
-      padding: 12px 20px;
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      text-decoration: none;
+    }
+
+    .header-logo {
+
+      width: 75px;
+      height: 62px;
+    }
+
+    .brand-name {
+
+      font-size: 17px;
+
+      font-weight: 700;
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+    }
+
+    .nav-links a {
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      color: #363238;
+
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+
+      color:
+        var(--violeta-dark);
+    }
+
+    .nav-contact {
+
+      padding:
+        11px 20px;
+
       border-radius: 50px;
+
+      background:
+        var(--negro);
+
+      color:
+        white !important;
     }
 
-    .nav-btn:hover {
-      background: var(--green-dark);
+    .nav-contact:hover {
+
+      background:
+        var(--violeta-dark);
     }
 
-    .menu-btn {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 25px;
-      cursor: pointer;
-    }
 
-    /* =========================
+    /* =========================================
        HERO
-    ========================= */
+    ========================================= */
 
     .hero {
-      min-height: 760px;
-      background:
-        linear-gradient(90deg, rgba(247,244,237,.98) 0%, rgba(247,244,237,.90) 43%, rgba(247,244,237,.15) 75%),
-        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
+
+      min-height: 100vh;
+
+      position: relative;
+
       display: flex;
+
       align-items: center;
-      padding-top: 80px;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(25, 20, 29, .88),
+          rgba(25, 20, 29, .60),
+          rgba(25, 20, 29, .15)
+        ),
+
+        url("https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=2200&q=90");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        radial-gradient(
+          circle at 20% 40%,
+          rgba(155, 93, 229, .22),
+          transparent 35%
+        );
+    }
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 140px;
+
+      background:
+        linear-gradient(
+          transparent,
+          var(--fondo)
+        );
     }
 
     .hero-content {
-      max-width: 620px;
+
+      position: relative;
+
+      z-index: 3;
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding-top: 80px;
     }
 
-    .eyebrow {
+    .hero-logo {
+
+      width: 380px;
+
+      max-width: 75vw;
+
+      height: 190px;
+
+      margin-bottom: 10px;
+    }
+
+    .hero-kicker {
+
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(83,107,85,.10);
-      color: var(--green);
-      padding: 9px 15px;
+
+      padding:
+        8px 15px;
+
       border-radius: 50px;
-      font-size: 13px;
+
+      background:
+        rgba(255, 255, 255, .12);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, .28);
+
+      color:
+        white;
+
+      font-size: 11px;
+
       font-weight: 700;
-      margin-bottom: 25px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(52px, 7vw, 88px);
-      line-height: .95;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-      color: var(--green-dark);
-    }
 
-    .hero h1 span {
-      color: var(--green);
-      font-style: italic;
+      max-width: 700px;
+
+      color:
+        white;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(43px, 6vw, 72px);
+
+      line-height: 1.03;
+
+      margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 520px;
-      color: #5e665f;
+
+      max-width: 590px;
+
+      color:
+        rgba(255,255,255,.90);
+
       font-size: 18px;
+
       line-height: 1.7;
-      margin-bottom: 32px;
     }
 
     .hero-buttons {
+
       display: flex;
+
+      gap: 13px;
+
       flex-wrap: wrap;
-      gap: 12px;
+
+      margin-top: 28px;
     }
 
-    .btn {
-      border: 0;
-      cursor: pointer;
-      padding: 15px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      transition: .25s ease;
+    .button {
+
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      gap: 8px;
+
+      padding:
+        14px 24px;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      transition: .3s;
     }
 
-    .btn-primary {
-      background: var(--green);
-      color: white;
+    .button-main {
+
+      background:
+        white;
+
+      color:
+        var(--negro);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: var(--green-dark);
-      box-shadow: 0 12px 25px rgba(83,107,85,.25);
+    .button-main:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.22);
     }
 
-    .btn-light {
-      background: rgba(255,255,255,.85);
-      color: var(--green-dark);
+    .button-outline {
+
+      color:
+        white;
+
+      border:
+        1px solid
+        rgba(255,255,255,.55);
+
+      background:
+        rgba(255,255,255,.07);
     }
 
-    .btn-light:hover {
-      transform: translateY(-3px);
+    .button-outline:hover {
+
+      background:
+        white;
+
+      color:
+        var(--negro);
     }
 
-    /* =========================
-       BENEFITS
-    ========================= */
 
-    .benefits {
-      padding: 22px 0;
-      background: var(--green-dark);
-      color: white;
+    /* =========================================
+       INTRO
+    ========================================= */
+
+    .intro {
+
+      padding:
+        95px 6% 70px;
     }
 
-    .benefit-grid {
+    .intro-inner {
+
+      max-width: 1180px;
+
+      margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
 
-    .benefit {
-      display: flex;
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
       align-items: center;
-      gap: 12px;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 600;
     }
 
-    .benefit-icon {
-      font-size: 23px;
-    }
+    .eyebrow {
 
-    /* =========================
-       SECTION
-    ========================= */
+      display: block;
 
-    section {
-      padding: 100px 0;
-    }
+      color:
+        var(--violeta-dark);
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 45px;
-    }
+      font-size: 12px;
 
-    .section-kicker {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 800;
+      font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 2px;
+
       margin-bottom: 12px;
     }
 
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1;
-      color: var(--green-dark);
+    .intro h2,
+    .section-header h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      line-height: 1.1;
     }
 
-    .section-description {
-      max-width: 470px;
-      color: var(--muted);
+    .intro h2 {
+
+      font-size:
+        clamp(35px, 5vw, 53px);
+
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+
+      color:
+        var(--gris);
+
+      line-height: 1.8;
+
+      font-size: 16px;
+    }
+
+    .intro-card {
+
+      position: relative;
+
+      min-height: 320px;
+
+      border-radius: 32px;
+
+      overflow: hidden;
+
+      background:
+
+        url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85");
+
+      background-size: cover;
+
+      background-position: center;
+
+      box-shadow:
+        0 25px 60px
+        rgba(73,49,90,.15);
+    }
+
+    .intro-card::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(125,70,170,.28),
+          transparent 60%
+        );
+    }
+
+    .intro-badge {
+
+      position: absolute;
+
+      z-index: 2;
+
+      left: 25px;
+      bottom: 25px;
+
+      background:
+        white;
+
+      padding:
+        15px 18px;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+
+      font-weight: 700;
+    }
+
+    .intro-badge small {
+
+      display: block;
+
+      color:
+        var(--gris);
+
+      font-weight: 400;
+
+      margin-top: 3px;
+    }
+
+
+    /* =========================================
+       CATEGORÍAS
+    ========================================= */
+
+    .categories-section {
+
+      padding:
+        60px 6% 100px;
+    }
+
+    .section-header {
+
+      max-width: 760px;
+
+      margin:
+        0 auto 45px;
+
+      text-align: center;
+    }
+
+    .section-header h2 {
+
+      font-size:
+        clamp(35px, 5vw, 52px);
+
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+
+      color:
+        var(--gris);
+
       line-height: 1.7;
     }
 
-    /* =========================
-       CATEGORIES
-    ========================= */
-
-    .categories {
-      background: var(--cream);
-    }
-
     .category-grid {
+
+      max-width: 1180px;
+
+      margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 18px;
     }
 
-    .category-card {
+    .category {
+
       position: relative;
-      height: 330px;
+
+      min-height: 270px;
+
       overflow: hidden;
-      border-radius: var(--radius);
-      cursor: pointer;
-      color: white;
+
+      border-radius: 25px;
+
+      text-decoration: none;
+
+      background:
+        #ddd;
     }
 
-    .category-card img {
-      height: 100%;
-      object-fit: cover;
-      transition: .6s ease;
-    }
+    .category img {
 
-    .category-card::after {
-      content: "";
       position: absolute;
+
       inset: 0;
-      background: linear-gradient(transparent 35%, rgba(15,25,17,.8));
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: .5s;
     }
 
-    .category-card:hover img {
-      transform: scale(1.08);
+    .category::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+          transparent 20%,
+          rgba(0,0,0,.78)
+        );
+    }
+
+    .category:hover img {
+
+      transform:
+        scale(1.07);
     }
 
     .category-content {
+
       position: absolute;
+
       z-index: 2;
-      left: 22px;
+
       bottom: 22px;
+
+      left: 22px;
+      right: 22px;
+
+      color:
+        white;
     }
 
     .category-content span {
-      font-size: 12px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
       opacity: .8;
     }
 
     .category-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 29px;
-      margin-top: 5px;
+
+      font-size: 23px;
+
+      margin-top: 4px;
     }
 
-    /* =========================
-       PRODUCTS
-    ========================= */
 
-    .products {
-      background: white;
+    /* =========================================
+       PRODUCTOS
+    ========================================= */
+
+    .products-section {
+
+      padding:
+        100px 6%;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          #f3eef7,
+          #ffffff
+        );
     }
 
-    .product-tools {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .products-grid {
 
-    .filter-btn {
-      border: 1px solid #dce1da;
-      background: white;
-      padding: 10px 17px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--muted);
-      transition: .2s;
-    }
+      max-width: 1180px;
 
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-    }
+      margin: auto;
 
-    .search-box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid #dce1da;
-      padding: 10px 15px;
-      border-radius: 50px;
-      margin-bottom: 30px;
-      max-width: 330px;
-    }
-
-    .search-box input {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      color: var(--text);
-      background: transparent;
-    }
-
-    .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 24px;
     }
 
-    .product-card {
-      background: #fff;
-      border: 1px solid #edf0eb;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: .3s;
-      cursor: pointer;
+    .product {
+
+      background:
+        white;
+
+      border:
+        1px solid
+        rgba(0,0,0,.06);
+
+      border-radius:
+        25px;
+
+      overflow:
+        hidden;
+
+      box-shadow:
+        0 10px 35px
+        rgba(50,35,60,.06);
+
+      transition:
+        .35s;
     }
 
-    .product-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
+    .product:hover {
+
+      transform:
+        translateY(-8px);
+
+      box-shadow:
+        0 20px 45px
+        rgba(50,35,60,.13);
     }
 
     .product-image {
-      height: 290px;
+
+      height: 285px;
+
       position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
       overflow: hidden;
-      background: var(--cream);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #faf9fb,
+          #eeeaf1
+        );
     }
 
     .product-image img {
+
+      width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: .5s;
+
+      object-fit: contain;
+
+      padding: 20px;
+
+      transition:
+        .4s;
     }
 
-    .product-card:hover .product-image img {
-      transform: scale(1.05);
+    .product:hover
+    .product-image img {
+
+      transform:
+        scale(1.06);
     }
 
-    .product-tag {
+    .product-label {
+
       position: absolute;
-      left: 14px;
+
       top: 14px;
-      background: white;
-      padding: 7px 11px;
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--green);
+      left: 14px;
+
+      z-index: 3;
+
+      padding:
+        7px 11px;
+
+      border-radius: 20px;
+
+      background:
+        var(--violeta);
+
+      color:
+        white;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .7px;
     }
 
     .product-info {
-      padding: 18px;
+
+      padding:
+        21px;
     }
 
-    .product-category {
-      color: var(--brown);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 800;
-    }
+    .product-info h3 {
 
-    .product-name {
-      font-family: "Playfair Display", serif;
-      font-size: 23px;
-      margin: 7px 0;
-      color: var(--green-dark);
+      font-size: 20px;
+
+      margin-bottom: 7px;
     }
 
     .product-info p {
+
+      color:
+        var(--gris);
+
       font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
+
+      line-height: 1.6;
     }
 
-    .product-bottom {
+    .product-link {
+
+      display: inline-block;
+
+      margin-top: 14px;
+
+      color:
+        var(--violeta-dark);
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================
+       BANNER
+    ========================================= */
+
+    .promo {
+
+      max-width: 1250px;
+
+      min-height: 430px;
+
+      margin:
+        20px auto 100px;
+
+      width: 88%;
+
+      border-radius: 35px;
+
+      overflow: hidden;
+
+      position: relative;
+
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
-      margin-top: 16px;
-    }
 
-    .view-product {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    /* =========================
-       BRAND
-    ========================= */
-
-    .brand-section {
-      background: var(--cream);
-    }
-
-    .brand-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .brand-image {
-      height: 570px;
-      border-radius: 30px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .brand-image img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-sticker {
-      position: absolute;
-      right: 25px;
-      bottom: 25px;
-      width: 135px;
-      height: 135px;
-      border-radius: 50%;
-      background: white;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 20px;
-      font-family: "Playfair Display", serif;
-      color: var(--green-dark);
-      box-shadow: var(--shadow);
-    }
-
-    .brand-text h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(40px, 5vw, 64px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .brand-text h2 span {
-      color: var(--green);
-    }
-
-    .brand-text p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
-
-    .quote {
-      border-left: 3px solid var(--green);
-      padding-left: 20px;
-      font-family: "Playfair Display", serif;
-      font-size: 24px;
-      color: var(--green-dark);
-      margin: 30px 0;
-    }
-
-    /* =========================
-       INSTAGRAM
-    ========================= */
-
-    .instagram {
-      padding-bottom: 0;
-    }
-
-    .instagram-head {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .instagram-head .section-description {
-      margin: 15px auto 0;
-    }
-
-    .instagram-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .instagram-item {
-      aspect-ratio: 1;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .instagram-item img {
-      height: 100%;
-      object-fit: cover;
-      transition: .5s;
-    }
-
-    .instagram-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .instagram-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      background: rgba(38,57,44,.55);
-      color: white;
-      opacity: 0;
-      transition: .3s;
-      font-size: 28px;
-    }
-
-    .instagram-item:hover .instagram-overlay {
-      opacity: 1;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      padding: 100px 0;
-    }
-
-    .cta-box {
       background:
-        linear-gradient(110deg, rgba(38,57,44,.98), rgba(83,107,85,.90)),
-        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-      border-radius: 32px;
-      padding: 75px;
-      color: white;
+
+        linear-gradient(
+          90deg,
+          rgba(63,43,81,.92),
+          rgba(63,43,81,.53),
+          rgba(63,43,81,.15)
+        ),
+
+        url("https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1800&q=90");
+
+      background-size:
+        cover;
+
+      background-position:
+        center;
+    }
+
+    .promo-content {
+
+      width: 90%;
+
+      max-width: 600px;
+
+      margin-left: 7%;
+
+      color:
+        white;
+    }
+
+    .promo-content h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(35px, 5vw, 57px);
+
+      line-height: 1.05;
+
+      margin-bottom: 17px;
+    }
+
+    .promo-content p {
+
+      line-height: 1.7;
+
+      color:
+        rgba(255,255,255,.88);
+    }
+
+
+    /* =========================================
+       CONTACTO
+    ========================================= */
+
+    .contact {
+
+      padding:
+        95px 6%;
+
+      background:
+        var(--verde);
+    }
+
+    .contact-box {
+
+      max-width: 850px;
+
+      margin: auto;
+
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .cta-box h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(40px, 5vw, 64px);
-      margin-bottom: 15px;
+    .contact-logo {
+
+      width: 210px;
+      height: 130px;
+
+      margin:
+        0 auto 10px;
     }
 
-    .cta-box p {
-      max-width: 580px;
-      margin: 0 auto 28px;
-      opacity: .85;
+    .contact-box h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(34px, 5vw, 48px);
+
+      margin-bottom: 13px;
+    }
+
+    .contact-box p {
+
+      color:
+        #596056;
+
+      max-width: 600px;
+
+      margin:
+        0 auto 27px;
+
       line-height: 1.7;
     }
 
-    .btn-white {
-      background: white;
-      color: var(--green-dark);
-    }
 
-    .btn-white:hover {
-      transform: translateY(-3px);
-    }
-
-    /* =========================
+    /* =========================================
        FOOTER
-    ========================= */
+    ========================================= */
 
     footer {
-      background: #202d23;
-      color: white;
-      padding: 65px 0 25px;
-    }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 50px;
-    }
+      position: relative;
 
-    .footer-brand p {
-      color: #b6beb7;
-      max-width: 300px;
-      line-height: 1.7;
-      margin-top: 15px;
-    }
+      overflow: hidden;
 
-    .footer-title {
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
+      background:
 
-    .footer-links {
-      display: grid;
-      gap: 11px;
-      color: #b6beb7;
-      font-size: 14px;
-    }
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(155,93,229,.12),
+          transparent 45%
+        ),
 
-    .footer-links a:hover {
-      color: white;
-    }
+        #171419;
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding-top: 22px;
+      color:
+        white;
+
+      padding:
+        50px 6% 35px;
+
       display: flex;
+
+      align-items: center;
+
       justify-content: space-between;
-      gap: 20px;
-      color: #8f9891;
+
+      gap: 25px;
+    }
+
+    footer::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(155,93,229,.65),
+          transparent
+        );
+    }
+
+    .footer-logo {
+
+      width: 190px;
+      height: 100px;
+    }
+
+    footer p {
+
+      color:
+        #aaa;
+
       font-size: 12px;
     }
 
-    /* =========================
-       WHATSAPP
-    ========================= */
 
-    .whatsapp {
+    /* =========================================
+       REDES SOCIALES FLOTANTES
+    ========================================= */
+
+    .floating-social {
+
       position: fixed;
+
       right: 22px;
       bottom: 22px;
-      width: 60px;
-      height: 60px;
+
+      z-index: 5000;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 12px;
+
+      transition:
+        opacity .35s,
+        transform .35s,
+        visibility .35s;
+    }
+
+    .floating-social.hidden {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transform:
+        translateY(25px);
+    }
+
+    .social-button {
+
+      width: 57px;
+      height: 57px;
+
       border-radius: 50%;
-      background: #25d366;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 29px;
-      z-index: 900;
-      box-shadow: 0 10px 30px rgba(37,211,102,.3);
-      transition: .25s;
-    }
 
-    .whatsapp:hover {
-      transform: scale(1.08);
-    }
+      display: flex;
 
-    /* =========================
-       MODAL
-    ========================= */
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(15,24,17,.65);
-      backdrop-filter: blur(7px);
-      z-index: 2000;
-      display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+
+      overflow: hidden;
+
+      background:
+        white;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.20);
+
+      transition:
+        .3s;
     }
 
-    .modal.active {
-      display: flex;
+    .social-button:hover {
+
+      transform:
+        scale(1.1);
     }
 
-    .modal-box {
-      background: white;
-      width: min(850px, 100%);
-      max-height: 90vh;
-      overflow: auto;
-      border-radius: 28px;
-      position: relative;
-      animation: modalIn .3s ease;
-    }
+    .social-button img {
 
-    @keyframes modalIn {
-      from {
-        opacity: 0;
-        transform: translateY(25px) scale(.97);
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    .modal-close {
-      position: absolute;
-      right: 18px;
-      top: 18px;
-      width: 40px;
-      height: 40px;
-      border: 0;
-      border-radius: 50%;
-      background: white;
-      box-shadow: 0 5px 20px rgba(0,0,0,.12);
-      cursor: pointer;
-      z-index: 3;
-      font-size: 20px;
-    }
-
-    .modal-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .modal-image {
-      min-height: 450px;
-    }
-
-    .modal-image img {
+      width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
-    .modal-info {
-      padding: 55px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .whatsapp {
+
+      background:
+        #25D366;
+
+      padding:
+        9px;
     }
 
-    .modal-info .product-category {
-      margin-bottom: 10px;
+    .whatsapp img {
+
+      object-fit:
+        contain;
     }
 
-    .modal-info h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      line-height: 1.05;
-      margin-bottom: 18px;
-      color: var(--green-dark);
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1050px) {
+
+      .category-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .products-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .intro-inner {
+
+        grid-template-columns:
+          1fr;
+      }
+
     }
 
-    .modal-info p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    @media (max-width: 700px) {
 
-    @media (max-width: 950px) {
-      .nav-links {
-        position: fixed;
-        top: 82px;
-        left: 20px;
-        right: 20px;
-        background: white;
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
+      .navbar {
+
+        height: 70px;
+
+        padding:
+          0 5%;
+      }
+
+      .header-logo {
+
+        width: 65px;
+        height: 55px;
+      }
+
+      .brand-name {
+
         display: none;
-        flex-direction: column;
-        align-items: flex-start;
       }
 
-      .nav-links.open {
-        display: flex;
-      }
+      .nav-links {
 
-      .menu-btn {
-        display: block;
-      }
-
-      .benefit-grid,
-      .category-grid,
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .brand-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .brand-image {
-        height: 450px;
-      }
-
-      .instagram-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      section {
-        padding: 70px 0;
+        display: none;
       }
 
       .hero {
-        min-height: 700px;
-        background:
-          linear-gradient(0deg, rgba(247,244,237,.98) 10%, rgba(247,244,237,.68) 60%, rgba(247,244,237,.15)),
-          url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80")
-          center/cover;
-        align-items: end;
-        padding-bottom: 70px;
+
+        min-height:
+          850px;
+
+        background-position:
+          62% center;
+      }
+
+      .hero-content {
+
+        width: 90%;
+
+        padding-top:
+          40px;
+      }
+
+      .hero-logo {
+
+        width: 290px;
+
+        height: 160px;
       }
 
       .hero h1 {
-        font-size: 55px;
+
+        font-size:
+          43px;
       }
 
       .hero p {
-        font-size: 16px;
+
+        font-size:
+          15px;
       }
 
-      .benefit-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 8px;
+      .intro {
+
+        padding:
+          70px 5% 55px;
       }
 
-      .benefit {
-        font-size: 12px;
+      .categories-section {
+
+        padding:
+          50px 5% 70px;
       }
 
-      .section-head {
-        display: block;
+      .category-grid {
+
+        grid-template-columns:
+          1fr;
       }
 
-      .section-description {
-        margin-top: 18px;
+      .category {
+
+        min-height:
+          230px;
       }
 
-      .product-tools {
-        margin-top: 25px;
+      .products-section {
+
+        padding:
+          70px 5%;
       }
 
-      .category-grid,
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
+      .products-grid {
 
-      .category-card {
-        height: 230px;
-        border-radius: 18px;
-      }
-
-      .category-content h3 {
-        font-size: 22px;
-      }
-
-      .product-image {
-        height: 210px;
-      }
-
-      .product-info {
-        padding: 14px;
-      }
-
-      .product-name {
-        font-size: 19px;
-      }
-
-      .product-info p {
-        font-size: 12px;
-      }
-
-      .brand-image {
-        height: 380px;
-      }
-
-      .instagram-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cta-box {
-        padding: 55px 22px;
-        border-radius: 24px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-
-      .footer-bottom {
-        display: block;
-        line-height: 1.8;
-      }
-
-      .modal-content {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-image {
-        min-height: 300px;
-        max-height: 350px;
-      }
-
-      .modal-info {
-        padding: 35px 25px;
-      }
-
-      .modal-info h2 {
-        font-size: 34px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .category-grid,
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .category-card {
-        height: 280px;
+        grid-template-columns:
+          1fr;
       }
 
       .product-image {
-        height: 280px;
+
+        height:
+          300px;
       }
+
+      .promo {
+
+        width:
+          90%;
+
+        min-height:
+          430px;
+
+        margin:
+          0 auto 70px;
+
+        border-radius:
+          25px;
+
+        background-position:
+          65% center;
+      }
+
+      .promo-content {
+
+        margin-left:
+          7%;
+      }
+
+      .contact-logo {
+
+        width:
+          180px;
+
+        height:
+          110px;
+      }
+
+      footer {
+
+        flex-direction:
+          column;
+
+        text-align:
+          center;
+      }
+
+      .floating-social {
+
+        right:
+          14px;
+
+        bottom:
+          14px;
+      }
+
+      .social-button {
+
+        width:
+          53px;
+
+        height:
+          53px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
+
+  <!-- =========================================
        HEADER
-  ========================== -->
+  ========================================= -->
 
-  <header id="header">
-    <div class="container nav">
+  <header
+    class="navbar"
+    id="navbar"
+  >
 
-      <a href="#inicio" class="logo">
-        <div class="logo-icon">🌿</div>
-        <div class="logo-text">HOGAR_NIDO</div>
+    <a
+      href="#inicio"
+      class="brand"
+    >
+
+      <div class="neon-logo header-logo">
+
+        <img
+          src="https://iili.io/CD8LzBe.png"
+          alt="Logo Hogar Nido"
+        >
+
+      </div>
+
+      <span class="brand-name">
+        Hogar Nido
+      </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+      <a href="#inicio">
+        Inicio
       </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#inicio">Inicio</a>
-        <a href="#categorias">Categorías</a>
-        <a href="#productos">Productos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#instagram">Instagram</a>
-        <a class="nav-btn" href="https://wa.me/5493541202252" target="_blank">
-          WhatsApp
-        </a>
-      </nav>
+      <a href="#categorias">
+        Categorías
+      </a>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <a href="#productos">
+        Productos
+      </a>
 
-    </div>
+      <a
+        href="#contacto"
+        class="nav-contact"
+      >
+        Contacto
+      </a>
+
+    </nav>
+
   </header>
 
 
-  <!-- =========================
+
+  <!-- =========================================
        HERO
-  ========================== -->
+  ========================================= -->
 
-  <main>
+  <section
+    class="hero"
+    id="inicio"
+  >
 
-    <section class="hero" id="inicio">
-      <div class="container">
+    <div class="hero-content">
 
-        <div class="hero-content">
+      <span class="hero-kicker">
+        Electrodomésticos · Cocina · Hogar
+      </span>
 
-          <div class="eyebrow">
-            🌿 HOGAR_NIDO
-          </div>
 
-          <h1>
-            Hacé de tu casa<br>
-            tu <span>lugar favorito.</span>
-          </h1>
+      <div class="neon-logo hero-logo">
 
-          <p>
-            Luces, aromas, productos para tu cocina, accesorios
-            y esos pequeños detalles que hacen que un hogar
-            se sienta realmente especial.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#productos" class="btn btn-primary">
-              Descubrir productos →
-            </a>
-
-            <a href="https://wa.me/5493541202252" target="_blank" class="btn btn-light">
-              💬 Consultanos
-            </a>
-          </div>
-
-        </div>
+        <img
+          src="https://iili.io/CD8LzBe.png"
+          alt="Hogar Nido"
+        >
 
       </div>
-    </section>
 
 
-    <!-- =========================
-         BENEFICIOS
-    ========================== -->
+      <h1>
+        Todo lo que tu hogar necesita.
+      </h1>
 
-    <div class="benefits">
-      <div class="container benefit-grid">
 
-        <div class="benefit">
-          <span class="benefit-icon">🇦🇷</span>
-          Envíos a todo el país
-        </div>
+      <p>
+        Productos y electrodomésticos pensados
+        para hacer tus días más cómodos,
+        prácticos y simples.
+      </p>
 
-        <div class="benefit">
-          <span class="benefit-icon">✨</span>
-          Productos seleccionados
-        </div>
 
-        <div class="benefit">
-          <span class="benefit-icon">💬</span>
-          Atención personalizada
-        </div>
+      <div class="hero-buttons">
 
-        <div class="benefit">
-          <span class="benefit-icon">🏠</span>
-          Todo para tu hogar
-        </div>
+        <a
+          href="#productos"
+          class="button button-main"
+        >
+          Ver productos
+        </a>
+
+
+        <a
+          href="#categorias"
+          class="button button-outline"
+        >
+          Explorar categorías
+        </a>
 
       </div>
+
     </div>
 
-
-    <!-- =========================
-         CATEGORÍAS
-    ========================== -->
-
-    <section class="categories" id="categorias">
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-            <div class="section-kicker">Explorá HOGAR_NIDO</div>
-            <h2 class="section-title">
-              Encontrá tu<br>nuevo favorito.
-            </h2>
-          </div>
-
-          <p class="section-description">
-            Desde una luz que cambia por completo un ambiente
-            hasta ese accesorio que estabas buscando.
-          </p>
-
-        </div>
-
-        <div class="category-grid">
-
-          <div class="category-card" onclick="filterProducts('Iluminación')">
-            <img
-              src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80"
-              alt="Iluminación">
-            <div class="category-content">
-              <span>01 · AMBIENTE</span>
-              <h3>Iluminación</h3>
-            </div>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('Aromas')">
-            <img
-              src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=80"
-              alt="Aromas">
-            <div class="category-content">
-              <span>02 · BIENESTAR</span>
-              <h3>Aromas</h3>
-            </div>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('Cocina')">
-            <img
-              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80"
-              alt="Cocina">
-            <div class="category-content">
-              <span>03 · COCINA</span>
-              <h3>Cocina</h3>
-            </div>
-          </div>
-
-          <div class="category-card" onclick="filterProducts('Accesorios')">
-            <img
-              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80"
-              alt="Accesorios">
-            <div class="category-content">
-              <span>04 · DETALLES</span>
-              <h3>Accesorios</h3>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+  </section>
 
 
-    <!-- =========================
-         PRODUCTOS
-    ========================== -->
 
-    <section class="products" id="productos">
-      <div class="container">
+  <!-- =========================================
+       INTRO
+  ========================================= -->
 
-        <div class="section-head">
+  <section class="intro">
 
-          <div>
-            <div class="section-kicker">Nuestros favoritos</div>
-            <h2 class="section-title">
-              Productos que<br>dan ganas de quedarse.
-            </h2>
-          </div>
-
-          <div class="product-tools">
-
-            <button class="filter-btn active" onclick="filterProducts('Todos', this)">
-              Todos
-            </button>
-
-            <button class="filter-btn" onclick="filterProducts('Iluminación', this)">
-              Luces
-            </button>
-
-            <button class="filter-btn" onclick="filterProducts('Aromas', this)">
-              Aromas
-            </button>
-
-            <button class="filter-btn" onclick="filterProducts('Cocina', this)">
-              Cocina
-            </button>
-
-            <button class="filter-btn" onclick="filterProducts('Accesorios', this)">
-              Accesorios
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="search-box">
-          🔎
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar productos..."
-          >
-        </div>
-
-        <div class="product-grid" id="productGrid"></div>
-
-      </div>
-    </section>
+    <div class="intro-inner">
 
 
-    <!-- =========================
-         NOSOTROS
-    ========================== -->
+      <div>
 
-    <section class="brand-section" id="nosotros">
-      <div class="container brand-layout">
-
-        <div class="brand-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85"
-            alt="HOGAR_NIDO">
-
-          <div class="brand-sticker">
-            ILUMINA<br>
-            AROMATIZA<br>
-            SENTÍ
-          </div>
-
-        </div>
-
-        <div class="brand-text">
-
-          <div class="section-kicker">
-            Nuestra esencia
-          </div>
-
-          <h2>
-            Pequeños detalles.<br>
-            <span>Grandes sensaciones.</span>
-          </h2>
-
-          <p>
-            En HOGAR_NIDO creemos que un hogar no se trata solamente
-            de muebles y objetos. Se trata de cómo nos hace sentir.
-          </p>
-
-          <p>
-            Por eso seleccionamos productos pensados para transformar
-            espacios cotidianos en lugares cálidos, funcionales
-            y llenos de personalidad.
-          </p>
-
-          <div class="quote">
-            “Tu hogar debería sentirse tan lindo como se ve.”
-          </div>
-
-          <a
-            href="https://www.instagram.com/hogar_nido/"
-            target="_blank"
-            class="btn btn-primary"
-          >
-            Conocé HOGAR_NIDO →
-          </a>
-
-        </div>
-
-      </div>
-    </section>
+        <span class="eyebrow">
+          Bienvenidos a Hogar Nido
+        </span>
 
 
-    <!-- =========================
-         INSTAGRAM
-    ========================== -->
-
-    <section class="instagram" id="instagram">
-
-      <div class="instagram-head">
-
-        <div class="section-kicker">
-          Seguinos
-        </div>
-
-        <h2 class="section-title">
-          @hogar_nido
+        <h2>
+          Equipá tu casa con lo que realmente necesitás.
         </h2>
 
-        <p class="section-description">
-          Inspirate, descubrí novedades y conocé más de nuestros productos.
+
+        <p>
+          Descubrí productos para cocinar,
+          limpiar, organizar y disfrutar
+          cada espacio de tu hogar.
         </p>
 
       </div>
 
-      <div class="instagram-grid">
 
-        <a
-          href="https://www.instagram.com/hogar_nido/"
-          target="_blank"
-          class="instagram-item"
-        >
-          <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=700&q=80" alt="">
-          <div class="instagram-overlay">◎</div>
-        </a>
+      <div class="intro-card">
 
-        <a
-          href="https://www.instagram.com/hogar_nido/"
-          target="_blank"
-          class="instagram-item"
-        >
-          <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=700&q=80" alt="">
-          <div class="instagram-overlay">◎</div>
-        </a>
+        <div class="intro-badge">
 
-        <a
-          href="https://www.instagram.com/hogar_nido/"
-          target="_blank"
-          class="instagram-item"
-        >
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80" alt="">
-          <div class="instagram-overlay">◎</div>
-        </a>
+          Para tu hogar
 
-        <a
-          href="https://www.instagram.com/hogar_nido/"
-          target="_blank"
-          class="instagram-item"
-        >
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80" alt="">
-          <div class="instagram-overlay">◎</div>
-        </a>
+          <small>
+            Práctico · Funcional · Simple
+          </small>
 
-        <a
-          href="https://www.instagram.com/hogar_nido/"
-          target="_blank"
-          class="instagram-item"
-        >
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80" alt="">
-          <div class="instagram-overlay">◎</div>
-        </a>
+        </div>
 
       </div>
 
-    </section>
+
+    </div>
+
+  </section>
 
 
-    <!-- =========================
-         CTA
-    ========================== -->
 
-    <section class="cta">
+  <!-- =========================================
+       CATEGORÍAS
+  ========================================= -->
 
-      <div class="container">
+  <section
+    class="categories-section"
+    id="categorias"
+  >
 
-        <div class="cta-box">
+    <div class="section-header">
 
-          <h2>¿Encontraste algo que te gustó?</h2>
+      <span class="eyebrow">
+        Encontrá lo que buscás
+      </span>
+
+
+      <h2>
+        Categorías
+      </h2>
+
+
+      <p>
+        Una selección pensada para distintos
+        espacios y necesidades de tu hogar.
+      </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <a
+        href="#productos"
+        class="category"
+      >
+
+        <img
+          src="https://iili.io/CD8wTAv.webp"
+          alt="Productos de cocina"
+          loading="lazy"
+        >
+
+        <div class="category-content">
+
+          <span>
+            Categoría
+          </span>
+
+          <h3>
+            Cocina
+          </h3>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="#productos"
+        class="category"
+      >
+
+        <img
+          src="https://iili.io/CD8OMn2.webp"
+          alt="Freidoras de aire"
+          loading="lazy"
+        >
+
+        <div class="category-content">
+
+          <span>
+            Categoría
+          </span>
+
+          <h3>
+            Pequeños electrodomésticos
+          </h3>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="#productos"
+        class="category"
+      >
+
+        <img
+          src="https://iili.io/CD8SAdP.png"
+          alt="Aspiradora para el hogar"
+          loading="lazy"
+        >
+
+        <div class="category-content">
+
+          <span>
+            Categoría
+          </span>
+
+          <h3>
+            Limpieza
+          </h3>
+
+        </div>
+
+      </a>
+
+
+      <a
+        href="#productos"
+        class="category"
+      >
+
+        <img
+          src="https://iili.io/CD8UFGR.png"
+          alt="Productos para el hogar"
+          loading="lazy"
+        >
+
+        <div class="category-content">
+
+          <span>
+            Categoría
+          </span>
+
+          <h3>
+            Hogar
+          </h3>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       PRODUCTOS
+  ========================================= -->
+
+  <section
+    class="products-section"
+    id="productos"
+  >
+
+    <div class="section-header">
+
+      <span class="eyebrow">
+        Productos destacados
+      </span>
+
+
+      <h2>
+        Conocé nuestros productos
+      </h2>
+
+
+      <p>
+        Algunos de los productos disponibles
+        para equipar tu hogar.
+      </p>
+
+    </div>
+
+
+    <div class="products-grid">
+
+
+      <!-- 01 PAVA -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8wTAv.webp"
+            alt="Pava eléctrica"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Pava eléctrica
+          </h3>
 
           <p>
-            Escribinos y te ayudamos con toda la información
-            que necesitás. Hacemos envíos a todo el país 🇦🇷
+            Práctica para preparar agua caliente
+            rápidamente.
           </p>
 
           <a
-            href="https://wa.me/5493541202252"
-            target="_blank"
-            class="btn btn-white"
+            href="#contacto"
+            class="product-link"
           >
-            💬 Consultar por WhatsApp
+            Consultar producto →
           </a>
 
         </div>
 
-      </div>
-
-    </section>
-
-  </main>
+      </article>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
 
-  <footer>
+      <!-- 02 FREIDORA -->
 
-    <div class="container">
+      <article class="product">
 
-      <div class="footer-grid">
+        <div class="product-image">
 
-        <div class="footer-brand">
+          <span class="product-label">
+            Cocina
+          </span>
 
-          <div class="logo">
-            <div class="logo-icon">🌿</div>
-            <div class="logo-text">HOGAR_NIDO</div>
-          </div>
+          <img
+            src="https://iili.io/CD8OMn2.webp"
+            alt="Freidora de aire"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Freidora de aire
+          </h3>
 
           <p>
-            Ilumina • Aromatiza • Sentí 💖
-            <br>
-            Todo eso que hace de tu casa un hogar.
+            Una alternativa práctica para preparar
+            diferentes comidas.
           </p>
 
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
         </div>
 
-        <div>
-          <div class="footer-title">Explorá</div>
+      </article>
 
-          <div class="footer-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#categorias">Categorías</a>
-            <a href="#productos">Productos</a>
-            <a href="#nosotros">Nosotros</a>
-          </div>
+
+
+      <!-- 03 LICUADORA -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8ehVp.png"
+            alt="Licuadora"
+            loading="lazy"
+          >
+
         </div>
 
-        <div>
-          <div class="footer-title">Seguinos</div>
 
-          <div class="footer-links">
-            <a href="https://www.instagram.com/hogar_nido/" target="_blank">
-              Instagram
-            </a>
+        <div class="product-info">
 
-            <a href="https://www.threads.com/@hogar_nido" target="_blank">
-              Threads
-            </a>
-          </div>
+          <h3>
+            Licuadora
+          </h3>
+
+          <p>
+            Ideal para licuados, bebidas
+            y diferentes preparaciones.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
         </div>
 
-        <div>
-          <div class="footer-title">Contacto</div>
+      </article>
 
-          <div class="footer-links">
 
-            <a
-              href="https://wa.me/5493541202252"
-              target="_blank"
-            >
-              WhatsApp
-            </a>
 
-            <span>Envíos a todo el país 🇦🇷</span>
+      <!-- 04 TOSTADORA -->
 
-          </div>
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8kcX4.png"
+            alt="Tostadora"
+            loading="lazy"
+          >
+
         </div>
 
-      </div>
 
-      <div class="footer-bottom">
+        <div class="product-info">
 
-        <span>
-          © 2026 HOGAR_NIDO. Todos los derechos reservados.
-        </span>
+          <h3>
+            Tostadora
+          </h3>
 
-        <span>
-          Hecho con 🌿 para tu hogar.
-        </span>
+          <p>
+            Una opción práctica para desayunos
+            rápidos y simples.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 05 CAFETERA -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8va8F.png"
+            alt="Cafetera"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Cafetera
+          </h3>
+
+          <p>
+            Para disfrutar un café recién preparado
+            en cualquier momento.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 06 MICROONDAS -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8vQwb.png"
+            alt="Microondas"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Microondas
+          </h3>
+
+          <p>
+            Solución práctica para calentar
+            y preparar comidas.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 07 ASPIRADORA -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Limpieza
+          </span>
+
+          <img
+            src="https://iili.io/CD8SAdP.png"
+            alt="Aspiradora"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Aspiradora
+          </h3>
+
+          <p>
+            Para mantener los distintos espacios
+            del hogar limpios.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 08 PLANCHA -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Hogar
+          </span>
+
+          <img
+            src="https://iili.io/CD8UFGR.png"
+            alt="Plancha eléctrica"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Plancha eléctrica
+          </h3>
+
+          <p>
+            Práctica para el cuidado diario
+            de la ropa.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- 09 AIR FRYER COSORI -->
+
+      <article class="product">
+
+        <div class="product-image">
+
+          <span class="product-label">
+            Cocina
+          </span>
+
+          <img
+            src="https://iili.io/CD8g2R9.png"
+            alt="Air Fryer Cosori"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>
+            Air Fryer Cosori
+          </h3>
+
+          <p>
+            Freidora de aire para preparar
+            diferentes comidas.
+          </p>
+
+          <a
+            href="#contacto"
+            class="product-link"
+          >
+            Consultar producto →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       BANNER
+  ========================================= -->
+
+  <section class="promo">
+
+    <div class="promo-content">
+
+      <span
+        class="eyebrow"
+        style="color:#d8c1ec;"
+      >
+        Hogar Nido
+      </span>
+
+
+      <h2>
+        Hacé de cada espacio un lugar más tuyo.
+      </h2>
+
+
+      <p>
+        Productos que combinan funcionalidad,
+        comodidad y practicidad para acompañarte
+        todos los días.
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#contacto"
+          class="button button-main"
+        >
+          Consultar productos
+        </a>
 
       </div>
 
     </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       CONTACTO
+  ========================================= -->
+
+  <section
+    class="contact"
+    id="contacto"
+  >
+
+    <div class="contact-box">
+
+
+      <div class="neon-logo contact-logo">
+
+        <img
+          src="https://iili.io/CD8LzBe.png"
+          alt="Hogar Nido"
+        >
+
+      </div>
+
+
+      <h2>
+        ¿Buscás un producto?
+      </h2>
+
+
+      <p>
+        Escribinos por WhatsApp para consultar
+        disponibilidad, productos y opciones
+        para tu hogar.
+      </p>
+
+
+      <!-- CAMBIAR EL NÚMERO -->
+
+      <a
+        href="https://wa.me/5490000000000"
+        target="_blank"
+        rel="noopener"
+        class="button"
+        style="
+          background:#18161a;
+          color:white;
+        "
+      >
+        Hablar por WhatsApp
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer id="footer">
+
+
+    <div class="neon-logo footer-logo">
+
+      <img
+        src="https://iili.io/CD8LzBe.png"
+        alt="Logo Hogar Nido"
+      >
+
+    </div>
+
+
+    <p>
+      © 2026 Hogar Nido · Electrodomésticos y productos para el hogar
+    </p>
+
 
   </footer>
 
 
-  <!-- =========================
-       WHATSAPP FLOATING
-  ========================== -->
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/5493541202252"
-    target="_blank"
-    aria-label="Contactar por WhatsApp"
+  <!-- =========================================
+       BOTONES FLOTANTES
+  ========================================= -->
+
+  <div
+    class="floating-social"
+    id="floatingSocial"
   >
-    ☎
-  </a>
 
 
-  <!-- =========================
-       PRODUCT MODAL
-  ========================== -->
+    <!-- INSTAGRAM -->
 
-  <div class="modal" id="productModal">
+    <a
+      class="social-button"
+      href="https://www.instagram.com/hogar_nido/"
+      target="_blank"
+      rel="noopener"
+      aria-label="Instagram"
+    >
 
-    <div class="modal-box">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        alt="Instagram"
+      >
 
-      <button class="modal-close" onclick="closeModal()">
-        ×
-      </button>
+    </a>
 
-      <div class="modal-content">
 
-        <div class="modal-image">
-          <img id="modalImage" src="" alt="">
-        </div>
+    <!-- WHATSAPP -->
 
-        <div class="modal-info">
+    <a
+      class="social-button whatsapp"
+      href="https://wa.me/5490000000000"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
 
-          <div class="product-category" id="modalCategory"></div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      >
 
-          <h2 id="modalTitle"></h2>
+    </a>
 
-          <p id="modalDescription"></p>
-
-          <a
-            id="modalWhatsapp"
-            href="#"
-            target="_blank"
-            class="btn btn-primary"
-          >
-            💬 Consultar producto
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
 
   </div>
 
 
-  <!-- =========================
+
+  <!-- =========================================
        JAVASCRIPT
-  ========================== -->
+  ========================================= -->
 
   <script>
 
-    /* =========================
-       PRODUCT DATA
-    ========================== */
+    /* HEADER */
 
-    const products = [
+    const navbar =
+      document.getElementById("navbar");
 
-      {
-        id: 1,
-        name: "Lámpara Nido",
-        category: "Iluminación",
-        tag: "DESTACADO",
-        description: "Una pieza cálida y decorativa para darle personalidad a cualquier rincón de tu hogar.",
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85"
-      },
+    window.addEventListener(
+      "scroll",
+      () => {
 
-      {
-        id: 2,
-        name: "Luz Decorativa",
-        category: "Iluminación",
-        tag: "NOVEDAD",
-        description: "Iluminación pensada para crear ambientes cálidos, relajados y especiales.",
-        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=900&q=85"
-      },
+        if (
+          window.scrollY > 30
+        ) {
 
-      {
-        id: 3,
-        name: "Vela Aromática",
-        category: "Aromas",
-        tag: "FAVORITO",
-        description: "Aromas suaves para transformar tus espacios y crear momentos de relax.",
-        image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85"
-      },
+          navbar.classList.add(
+            "scrolled"
+          );
 
-      {
-        id: 4,
-        name: "Difusor de Aromas",
-        category: "Aromas",
-        tag: "NUEVO",
-        description: "Una forma simple y elegante de llenar tus ambientes de una fragancia agradable.",
-        image: "https://images.unsplash.com/photo-1602874801006-e26b8f1f6e90?auto=format&fit=crop&w=900&q=85"
-      },
+        } else {
 
-      {
-        id: 5,
-        name: "Set para Cocina",
-        category: "Cocina",
-        tag: "DESTACADO",
-        description: "Accesorios prácticos y lindos para disfrutar todavía más tu cocina.",
-        image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
-      },
+          navbar.classList.remove(
+            "scrolled"
+          );
 
-      {
-        id: 6,
-        name: "Accesorios de Cocina",
-        category: "Cocina",
-        tag: "FAVORITO",
-        description: "Pequeños detalles que combinan funcionalidad y diseño.",
-        image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85"
-      },
-
-      {
-        id: 7,
-        name: "Organizador Nido",
-        category: "Accesorios",
-        tag: "NOVEDAD",
-        description: "Ordená tus espacios de una manera práctica y estética.",
-        image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=85"
-      },
-
-      {
-        id: 8,
-        name: "Detalle Decorativo",
-        category: "Accesorios",
-        tag: "TOP",
-        description: "Ese detalle que completa un ambiente y le da un toque único.",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
-      }
-
-    ];
-
-
-    let currentCategory = "Todos";
-
-
-    /* =========================
-       RENDER PRODUCTS
-    ========================== */
-
-    function renderProducts() {
-
-      const grid = document.getElementById("productGrid");
-      const search = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-      const filtered = products.filter(product => {
-
-        const categoryMatch =
-          currentCategory === "Todos" ||
-          product.category === currentCategory;
-
-        const searchMatch =
-          product.name.toLowerCase().includes(search) ||
-          product.category.toLowerCase().includes(search) ||
-          product.description.toLowerCase().includes(search);
-
-        return categoryMatch && searchMatch;
-
-      });
-
-
-      grid.innerHTML = "";
-
-
-      if (!filtered.length) {
-
-        grid.innerHTML = `
-          <div style="
-            grid-column:1/-1;
-            text-align:center;
-            padding:70px 20px;
-            color:#747b73;
-          ">
-            <div style="font-size:45px;margin-bottom:15px;">🌿</div>
-            <h3 style="font-family:'Playfair Display',serif;font-size:30px;color:#26392c;">
-              No encontramos productos
-            </h3>
-            <p style="margin-top:10px;">
-              Probá con otra búsqueda o categoría.
-            </p>
-          </div>
-        `;
-
-        return;
-      }
-
-
-      filtered.forEach(product => {
-
-        const card = document.createElement("article");
-
-        card.className = "product-card";
-
-        card.onclick = () => openModal(product.id);
-
-        card.innerHTML = `
-
-          <div class="product-image">
-
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-            >
-
-            <div class="product-tag">
-              ${product.tag}
-            </div>
-
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              ${product.category}
-            </div>
-
-            <div class="product-name">
-              ${product.name}
-            </div>
-
-            <p>
-              ${product.description}
-            </p>
-
-            <div class="product-bottom">
-              <span class="view-product">
-                Ver producto →
-              </span>
-
-              <span>
-                💚
-              </span>
-            </div>
-
-          </div>
-
-        `;
-
-        grid.appendChild(card);
-
-      });
-
-    }
-
-
-    /* =========================
-       FILTER
-    ========================== */
-
-    function filterProducts(category, button = null) {
-
-      currentCategory = category;
-
-      if (button) {
-
-        document
-          .querySelectorAll(".filter-btn")
-          .forEach(btn => btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-      }
-
-      renderProducts();
-
-      document
-        .getElementById("productos")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-    }
-
-
-    /* =========================
-       SEARCH
-    ========================== */
-
-    document
-      .getElementById("searchInput")
-      .addEventListener("input", renderProducts);
-
-
-    /* =========================
-       MODAL
-    ========================== */
-
-    function openModal(id) {
-
-      const product = products.find(p => p.id === id);
-
-      if (!product) return;
-
-      document.getElementById("modalImage").src = product.image;
-
-      document.getElementById("modalImage").alt = product.name;
-
-      document.getElementById("modalCategory").textContent =
-        product.category;
-
-      document.getElementById("modalTitle").textContent =
-        product.name;
-
-      document.getElementById("modalDescription").textContent =
-        product.description;
-
-
-      const message =
-        `Hola HOGAR_NIDO 🌿, quería consultar por el producto "${product.name}".`;
-
-      document.getElementById("modalWhatsapp").href =
-        `https://wa.me/5493541202252?text=${encodeURIComponent(message)}`;
-
-
-      document
-        .getElementById("productModal")
-        .classList.add("active");
-
-      document.body.style.overflow = "hidden";
-
-    }
-
-
-    function closeModal() {
-
-      document
-        .getElementById("productModal")
-        .classList.remove("active");
-
-      document.body.style.overflow = "";
-
-    }
-
-
-    document
-      .getElementById("productModal")
-      .addEventListener("click", function(e) {
-
-        if (e.target === this) {
-          closeModal();
         }
 
-      });
-
-
-    document.addEventListener("keydown", function(e) {
-
-      if (e.key === "Escape") {
-        closeModal();
       }
-
-    });
-
-
-    /* =========================
-       HEADER SCROLL
-    ========================== */
-
-    window.addEventListener("scroll", () => {
-
-      const header = document.getElementById("header");
-
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-
-    });
+    );
 
 
-    /* =========================
-       MOBILE MENU
-    ========================== */
+    /* =========================================
+       OCULTAR INSTAGRAM + WHATSAPP EN FOOTER
+    ========================================= */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+    const floatingSocial =
+      document.getElementById(
+        "floatingSocial"
+      );
 
-    menuBtn.addEventListener("click", () => {
-
-      navLinks.classList.toggle("open");
-
-      menuBtn.textContent =
-        navLinks.classList.contains("open")
-          ? "×"
-          : "☰";
-
-    });
+    const footer =
+      document.getElementById(
+        "footer"
+      );
 
 
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
+    const footerObserver =
+      new IntersectionObserver(
 
-        link.addEventListener("click", () => {
+        (entries) => {
 
-          navLinks.classList.remove("open");
+          entries.forEach(
+            (entry) => {
 
-          menuBtn.textContent = "☰";
+              if (
+                entry.isIntersecting
+              ) {
 
-        });
+                floatingSocial.classList.add(
+                  "hidden"
+                );
 
-      });
+              } else {
+
+                floatingSocial.classList.remove(
+                  "hidden"
+                );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.05
+        }
+
+      );
 
 
-    /* =========================
-       INITIALIZE
-    ========================== */
-
-    renderProducts();
+    footerObserver.observe(
+      footer
+    );
 
   </script>
 
+
 </body>
+
 </html>
-```
