@@ -57,8 +57,6 @@
     content="Descubrí nuestros electrodomésticos y productos para cocina, limpieza y hogar."
   >
 
-  <!-- CAMBIAR CUANDO TENGAS EL DOMINIO -->
-
   <meta
     property="og:url"
     content="https://tudominio.com/"
@@ -162,6 +160,8 @@
 
       --verde: #e7eee3;
 
+      --naranja: #f59e0b;
+
     }
 
 
@@ -212,11 +212,15 @@
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
 
     button {
       font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
     }
 
 
@@ -479,6 +483,191 @@
 
 
     /* =====================================================
+       HAMBURGER MENU
+    ===================================================== */
+
+    .hamburger {
+
+      display: none;
+
+      flex-direction: column;
+
+      gap: 5px;
+
+      padding: 5px;
+
+      z-index: 1001;
+
+      cursor: pointer;
+
+    }
+
+
+    .hamburger span {
+
+      display: block;
+
+      width: 28px;
+
+      height: 3px;
+
+      background:
+        var(--negro);
+
+      border-radius:
+        4px;
+
+      transition:
+        .3s;
+
+    }
+
+
+    .hamburger.active span:nth-child(1) {
+
+      transform:
+        rotate(45deg)
+        translate(5px, 6px);
+
+    }
+
+
+    .hamburger.active span:nth-child(2) {
+
+      opacity:
+        0;
+
+    }
+
+
+    .hamburger.active span:nth-child(3) {
+
+      transform:
+        rotate(-45deg)
+        translate(5px, -6px);
+
+    }
+
+
+    /* Mobile Nav */
+
+    .mobile-nav {
+
+      position:
+        fixed;
+
+      top: 0;
+      right: -100%;
+
+      width: 75%;
+      max-width: 320px;
+
+      height: 100vh;
+
+      z-index: 999;
+
+      background:
+        white;
+
+      padding:
+        100px 30px 40px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap: 25px;
+
+      box-shadow:
+        -10px 0 40px
+        rgba(0,0,0,.12);
+
+      transition:
+        right .35s ease;
+
+    }
+
+
+    .mobile-nav.open {
+
+      right: 0;
+
+    }
+
+
+    .mobile-nav a {
+
+      font-size:
+        18px;
+
+      font-weight:
+        600;
+
+      color:
+        var(--negro);
+
+      padding:
+        10px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.06);
+
+      transition:
+        .25s;
+
+    }
+
+
+    .mobile-nav a:hover {
+
+      color:
+        var(--violeta-dark);
+
+      padding-left:
+        8px;
+
+    }
+
+
+    .mobile-overlay {
+
+      position:
+        fixed;
+
+      inset: 0;
+
+      z-index: 998;
+
+      background:
+        rgba(0,0,0,.35);
+
+      opacity:
+        0;
+
+      visibility:
+        hidden;
+
+      transition:
+        .35s;
+
+    }
+
+
+    .mobile-overlay.active {
+
+      opacity:
+        1;
+
+      visibility:
+        visible;
+
+    }
+
+
+    /* =====================================================
        HERO
     ===================================================== */
 
@@ -557,12 +746,6 @@
 
     }
 
-
-    /*
-       IMPORTANTE:
-       TODO EL CONTENIDO DEL HERO
-       ESTÁ CENTRADO.
-    */
 
     .hero-content {
 
@@ -768,6 +951,49 @@
 
 
     /* =====================================================
+       INFO DESTACADA (Córdoba + Envíos)
+    ===================================================== */
+
+    .info-highlight {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 30px;
+
+      flex-wrap: wrap;
+
+      margin-top: 20px;
+
+    }
+
+
+    .info-highlight .info-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: rgba(255,255,255,.85);
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+    }
+
+
+    .info-highlight .info-item span {
+
+      font-size: 18px;
+
+    }
+
+
+    /* =====================================================
        INTRO
     ===================================================== */
 
@@ -918,58 +1144,8 @@
     }
 
 
-    .intro-badge {
-
-      position:
-        absolute;
-
-      z-index:
-        2;
-
-      left:
-        25px;
-
-      bottom:
-        25px;
-
-      background:
-        white;
-
-      padding:
-        15px 18px;
-
-      border-radius:
-        18px;
-
-      box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.15);
-
-      font-weight:
-        700;
-
-    }
-
-
-    .intro-badge small {
-
-      display:
-        block;
-
-      color:
-        var(--gris);
-
-      font-weight:
-        400;
-
-      margin-top:
-        3px;
-
-    }
-
-
     /* =====================================================
-       CATEGORÍAS
+       CATEGORÍAS - SOLO 3
     ===================================================== */
 
     .categories-section {
@@ -1028,7 +1204,7 @@
         grid;
 
       grid-template-columns:
-        repeat(4,1fr);
+        repeat(3,1fr);
 
       gap:
         18px;
@@ -1054,7 +1230,7 @@
         none;
 
       background:
-        #ddd;
+        #f5f3f7;
 
     }
 
@@ -1074,7 +1250,10 @@
         100%;
 
       object-fit:
-        cover;
+        contain;
+
+      padding:
+        10px;
 
       transition:
         .5s;
@@ -1105,7 +1284,7 @@
     .category:hover img {
 
       transform:
-        scale(1.07);
+        scale(1.05);
 
     }
 
@@ -1168,7 +1347,7 @@
     .products-section {
 
       padding:
-        100px 6%;
+        100px 6% 60px;
 
       background:
         linear-gradient(
@@ -1340,6 +1519,17 @@
     }
 
 
+    .product-label.wholesale {
+
+      background:
+        var(--naranja);
+
+      color:
+        #1a1a1a;
+
+    }
+
+
     .product-info {
 
       padding:
@@ -1361,17 +1551,8 @@
 
     .product-info p {
 
-      color:
-        var(--gris);
-
-      font-size:
-        13px;
-
-      line-height:
-        1.6;
-
-      margin-bottom:
-        13px;
+      display:
+        none;
 
     }
 
@@ -1412,6 +1593,461 @@
 
       font-weight:
         700;
+
+    }
+
+
+    /* =====================================================
+       PAGINACIÓN
+    ===================================================== */
+
+    .pagination-wrapper {
+
+      max-width:
+        1180px;
+
+      margin:
+        40px auto 0;
+
+      display:
+        flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+
+    .pagination-controls {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      flex-wrap:
+        wrap;
+
+      justify-content:
+        center;
+
+    }
+
+
+    .pagination-controls button {
+
+      padding:
+        10px 18px;
+
+      border-radius:
+        12px;
+
+      background:
+        white;
+
+      border:
+        1px solid
+        rgba(0,0,0,.08);
+
+      font-weight:
+        600;
+
+      font-size:
+        14px;
+
+      color:
+        var(--negro);
+
+      transition:
+        .25s;
+
+    }
+
+
+    .pagination-controls button:hover {
+
+      background:
+        var(--violeta-light);
+
+      border-color:
+        var(--violeta);
+
+    }
+
+
+    .pagination-controls button.active {
+
+      background:
+        var(--violeta);
+
+      color:
+        white;
+
+      border-color:
+        var(--violeta);
+
+    }
+
+
+    .pagination-controls button:disabled {
+
+      opacity:
+        0.4;
+
+      cursor:
+        not-allowed;
+
+    }
+
+
+    .pagination-controls button:disabled:hover {
+
+      background:
+        white;
+
+      border-color:
+        rgba(0,0,0,.08);
+
+    }
+
+
+    /* =====================================================
+       VER MÁS EN INSTAGRAM - SOLO EN ÚLTIMA PÁGINA
+    ===================================================== */
+
+    .see-more-instagram {
+
+      display:
+        none;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        14px 30px;
+
+      border-radius:
+        50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+
+      color:
+        white !important;
+
+      font-weight:
+        700;
+
+      font-size:
+        15px;
+
+      transition:
+        .3s;
+
+      box-shadow:
+        0 8px 25px
+        rgba(188,24,136,.25);
+
+      text-decoration:
+        none;
+
+    }
+
+
+    .see-more-instagram.visible {
+
+      display:
+        inline-flex;
+
+    }
+
+
+    .see-more-instagram:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 12px 35px
+        rgba(188,24,136,.35);
+
+    }
+
+
+    .see-more-instagram img {
+
+      width:
+        24px;
+
+      height:
+        24px;
+
+      object-fit:
+        contain;
+
+      filter: none !important;
+
+    }
+
+
+    /* =====================================================
+       REDES FLOTANTES - ORIGINALES
+    ===================================================== */
+
+    .floating-social {
+
+      position:
+        fixed;
+
+      right:
+        22px;
+
+      bottom:
+        22px;
+
+      z-index:
+        5000;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      gap:
+        12px;
+
+      transition:
+        opacity .35s,
+        transform .35s,
+        visibility .35s;
+
+    }
+
+
+    .floating-social.hidden {
+
+      opacity:
+        0;
+
+      visibility:
+        hidden;
+
+      pointer-events:
+        none;
+
+      transform:
+        translateY(25px);
+
+    }
+
+
+    .social-button {
+
+      width:
+        57px;
+
+      height:
+        57px;
+
+      border-radius:
+        50%;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      overflow:
+        hidden;
+
+      background:
+        white;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.20);
+
+      transition:
+        .3s;
+
+      cursor:
+        pointer;
+
+    }
+
+
+    .social-button:hover {
+
+      transform:
+        scale(1.1);
+
+    }
+
+
+    .social-button img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+    }
+
+
+    .whatsapp {
+
+      background:
+        #25D366;
+
+      padding:
+        9px;
+
+    }
+
+
+    .whatsapp img {
+
+      object-fit:
+        contain;
+
+    }
+
+
+    /* =====================================================
+       WHOLESALE PRICES (en modal)
+    ===================================================== */
+
+    .wholesale-section {
+
+      margin:
+        14px 0 20px;
+
+      padding:
+        16px 18px;
+
+      border-radius:
+        18px;
+
+      background:
+        #fef9e7;
+
+      border:
+        1px solid
+        #fde68a;
+
+    }
+
+
+    .wholesale-section .wholesale-title {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      font-size:
+        14px;
+
+      font-weight:
+        700;
+
+      color:
+        #92400e;
+
+      margin-bottom:
+        10px;
+
+    }
+
+
+    .wholesale-section .wholesale-title span {
+
+      font-size:
+        18px;
+
+    }
+
+
+    .wholesale-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        6px 18px;
+
+    }
+
+
+    .wholesale-item {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      padding:
+        4px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.06);
+
+      font-size:
+        14px;
+
+    }
+
+
+    .wholesale-item .qty {
+
+      color:
+        var(--gris);
+
+    }
+
+
+    .wholesale-item .price {
+
+      font-weight:
+        700;
+
+      color:
+        var(--violeta-dark);
 
     }
 
@@ -1621,14 +2257,17 @@
       display:
         flex;
 
+      flex-direction:
+        column;
+
       align-items:
         center;
 
-      justify-content:
-        space-between;
-
       gap:
         25px;
+
+      text-align:
+        center;
 
     }
 
@@ -1686,131 +2325,38 @@
     }
 
 
-    /* =====================================================
-       REDES FLOTANTES
-    ===================================================== */
+    .footer-credit {
 
-    .floating-social {
+      color:
+        #888;
 
-      position:
-        fixed;
+      font-size:
+        11px;
 
-      right:
-        22px;
+      letter-spacing:
+        0.5px;
 
-      bottom:
-        22px;
+    }
 
-      z-index:
-        5000;
 
-      display:
-        flex;
+    .footer-credit a {
 
-      flex-direction:
-        column;
+      color:
+        #9b5de5;
 
-      gap:
-        12px;
+      font-weight:
+        600;
 
       transition:
-        opacity .35s,
-        transform .35s,
-        visibility .35s;
+        .25s;
 
     }
 
 
-    .floating-social.hidden {
+    .footer-credit a:hover {
 
-      opacity:
-        0;
-
-      visibility:
-        hidden;
-
-      pointer-events:
-        none;
-
-      transform:
-        translateY(25px);
-
-    }
-
-
-    .social-button {
-
-      width:
-        57px;
-
-      height:
-        57px;
-
-      border-radius:
-        50%;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      overflow:
-        hidden;
-
-      background:
-        white;
-
-      box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.20);
-
-      transition:
-        .3s;
-
-    }
-
-
-    .social-button:hover {
-
-      transform:
-        scale(1.1);
-
-    }
-
-
-    .social-button img {
-
-      width:
-        100%;
-
-      height:
-        100%;
-
-      object-fit:
-        cover;
-
-    }
-
-
-    .whatsapp {
-
-      background:
-        #25D366;
-
-      padding:
-        9px;
-
-    }
-
-
-    .whatsapp img {
-
-      object-fit:
-        contain;
+      color:
+        #c9a8f0;
 
     }
 
@@ -2115,7 +2661,7 @@
         15px;
 
       margin-bottom:
-        22px;
+        18px;
 
     }
 
@@ -2132,7 +2678,7 @@
         var(--violeta-dark);
 
       margin-bottom:
-        25px;
+        5px;
 
     }
 
@@ -2147,6 +2693,9 @@
 
       flex-wrap:
         wrap;
+
+      margin-top:
+        8px;
 
     }
 
@@ -2264,6 +2813,14 @@
       }
 
 
+      .hamburger {
+
+        display:
+          flex;
+
+      }
+
+
       .hero {
 
         min-height:
@@ -2345,6 +2902,20 @@
       }
 
 
+      .info-highlight {
+
+        flex-direction:
+          column;
+
+        gap:
+          10px;
+
+        align-items:
+          center;
+
+      }
+
+
       .intro {
 
         padding:
@@ -2372,7 +2943,15 @@
       .category {
 
         min-height:
-          230px;
+          200px;
+
+      }
+
+
+      .category img {
+
+        padding:
+          15px;
 
       }
 
@@ -2380,7 +2959,7 @@
       .products-section {
 
         padding:
-          70px 5%;
+          70px 5% 40px;
 
       }
 
@@ -2473,8 +3052,6 @@
       }
 
 
-      /* MODAL */
-
       .modal {
 
         padding:
@@ -2561,6 +3138,25 @@
 
       }
 
+
+      .wholesale-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .pagination-controls button {
+
+        padding:
+          8px 14px;
+
+        font-size:
+          13px;
+
+      }
+
     }
 
   </style>
@@ -2626,7 +3222,51 @@
 
     </nav>
 
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Abrir menú"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
   </header>
+
+
+  <!-- MOBILE NAV -->
+  <div
+    class="mobile-overlay"
+    id="mobileOverlay"
+  ></div>
+
+
+  <nav
+    class="mobile-nav"
+    id="mobileNav"
+  >
+
+    <a href="#inicio">
+      Inicio
+    </a>
+
+    <a href="#categorias">
+      Categorías
+    </a>
+
+    <a href="#productos">
+      Productos
+    </a>
+
+    <a href="#contacto">
+      Contacto
+    </a>
+
+  </nav>
 
 
 
@@ -2646,8 +3286,6 @@
         Electrodomésticos · Cocina · Hogar
       </span>
 
-
-      <!-- LOGO CENTRADO -->
 
       <div
         class="neon-logo hero-logo"
@@ -2671,6 +3309,19 @@
         para hacer tus días más cómodos,
         prácticos y simples.
       </p>
+
+
+      <div class="info-highlight">
+
+        <span class="info-item">
+          <span>📍</span> Córdoba, Argentina
+        </span>
+
+        <span class="info-item">
+          <span>🚚</span> Envíos a todo el país
+        </span>
+
+      </div>
 
 
       <div class="hero-buttons">
@@ -2728,19 +3379,7 @@
       </div>
 
 
-      <div class="intro-card">
-
-        <div class="intro-badge">
-
-          Para tu hogar
-
-          <small>
-            Práctico · Funcional · Simple
-          </small>
-
-        </div>
-
-      </div>
+      <div class="intro-card"></div>
 
 
     </div>
@@ -2750,7 +3389,7 @@
 
 
   <!-- =====================================================
-       CATEGORÍAS
+       CATEGORÍAS - SOLO 3
   ===================================================== -->
 
   <section
@@ -2787,8 +3426,8 @@
       >
 
         <img
-          src="https://iili.io/CD8wTAv.webp"
-          alt="Productos de cocina"
+          src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80"
+          alt="Cocina"
           loading="lazy"
         >
 
@@ -2813,7 +3452,7 @@
       >
 
         <img
-          src="https://iili.io/CD8OMn2.webp"
+          src="https://images.unsplash.com/photo-1588854337115-1c67d9247e4d?auto=format&fit=crop&w=800&q=80"
           alt="Electrodomésticos"
           loading="lazy"
         >
@@ -2839,34 +3478,8 @@
       >
 
         <img
-          src="https://iili.io/CD8SAdP.png"
-          alt="Productos de limpieza"
-          loading="lazy"
-        >
-
-        <div class="category-content">
-
-          <span>
-            Categoría
-          </span>
-
-          <h3>
-            Limpieza
-          </h3>
-
-        </div>
-
-      </a>
-
-
-      <a
-        href="#productos"
-        class="category"
-      >
-
-        <img
-          src="https://iili.io/CD8UFGR.png"
-          alt="Productos para el hogar"
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+          alt="Hogar"
           loading="lazy"
         >
 
@@ -2924,6 +3537,37 @@
       class="products-grid"
       id="productsGrid"
     ></div>
+
+
+    <div
+      class="pagination-wrapper"
+      id="paginationWrapper"
+    >
+
+      <div
+        class="pagination-controls"
+        id="paginationControls"
+      ></div>
+
+
+      <a
+        href="https://www.instagram.com/hogar_nido/"
+        target="_blank"
+        rel="noopener"
+        class="see-more-instagram"
+        id="seeMoreInstagram"
+      >
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+          alt="Instagram"
+        >
+
+        Ver más productos en Instagram
+
+      </a>
+
+    </div>
 
   </section>
 
@@ -3011,7 +3655,7 @@
 
 
       <a
-        href="https://wa.me/5490000000000"
+        href="https://wa.me/5493541202252"
         target="_blank"
         rel="noopener"
         class="button"
@@ -3054,12 +3698,24 @@
     </p>
 
 
+    <p class="footer-credit">
+      CREADO Y DISEÑADO POR
+      <a
+        href="https://ciborg347.onrender.com"
+        target="_blank"
+        rel="noopener"
+      >
+        CIBORG 347
+      </a>
+    </p>
+
+
   </footer>
 
 
 
   <!-- =====================================================
-       REDES FLOTANTES
+       REDES FLOTANTES - ORIGINALES
   ===================================================== -->
 
   <div
@@ -3067,8 +3723,6 @@
     id="floatingSocial"
   >
 
-
-    <!-- INSTAGRAM -->
 
     <a
       class="social-button"
@@ -3086,11 +3740,9 @@
     </a>
 
 
-    <!-- WHATSAPP -->
-
     <a
       class="social-button whatsapp"
-      href="https://wa.me/5490000000000"
+      href="https://wa.me/5493541202252"
       target="_blank"
       rel="noopener"
       aria-label="WhatsApp"
@@ -3167,6 +3819,11 @@
         ></div>
 
 
+        <div
+          id="modalWholesale"
+        ></div>
+
+
         <div class="modal-actions">
 
 
@@ -3210,18 +3867,12 @@
        CONFIGURACIÓN
     ===================================================== */
 
-    /*
-      CAMBIAR ESTE NÚMERO POR EL WHATSAPP REAL.
-
-      Formato:
-      549 + código de área + número
-
-      Ejemplo:
-      5491123456789
-    */
-
     const WHATSAPP_NUMBER =
-      "5490000000000";
+      "5493541202252";
+
+
+    const INSTAGRAM_URL =
+      "https://www.instagram.com/hogar_nido/";
 
 
 
@@ -3234,181 +3885,199 @@
 
       {
         id: 1,
-
-        name:
-          "Pava eléctrica",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Pava eléctrica práctica y funcional para preparar agua caliente de manera rápida y sencilla. Ideal para acompañar tus desayunos, meriendas y momentos de todos los días.",
-
-        image:
-          "https://iili.io/CD8wTAv.webp"
+        name: "Tostadora 2 Rebanadas",
+        category: "Cocina",
+        price: "$27.000",
+        description: "Tostadora de 2 rebanadas con 7 niveles de tostado, bandeja juntamigas y botón de cancelar. Potencia de 750W. Práctica y funcional para tus desayunos y meriendas.",
+        image: "https://iili.io/CD4LZdX.md.jpg",
+        wholesale: null
       },
 
 
       {
         id: 2,
-
-        name:
-          "Freidora de aire",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Freidora de aire pensada para preparar diferentes comidas de manera práctica. Una excelente opción para incorporar a tu cocina.",
-
-        image:
-          "https://iili.io/CD8OMn2.webp"
+        name: "Waflera Yelmo",
+        category: "Cocina",
+        price: "$35.000",
+        description: "Waflera con placas antiadherentes, fácil de limpiar y con termostato automático. Superficie exterior fría al tacto para mayor seguridad. Potencia de 900W.",
+        image: "https://iili.io/CD6Hnj9.md.jpg",
+        wholesale: [
+          { qty: "x5", price: "$33.750 c/u" },
+          { qty: "x10", price: "$33.250 c/u" }
+        ]
       },
 
 
       {
         id: 3,
-
-        name:
-          "Licuadora",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Licuadora ideal para preparar licuados, bebidas, salsas y diferentes preparaciones. Un electrodoméstico práctico para el día a día.",
-
-        image:
-          "https://iili.io/CD8ehVp.png"
+        name: "Cámaras de Seguridad Oryx Kit x4",
+        category: "Hogar",
+        price: "$210.000",
+        description: "Kit de 4 cámaras de seguridad Full HD 1080p con tecnología infrarroja para visión nocturna. Sistema cableado centralizado, ideal para interiores y exteriores.",
+        image: "https://iili.io/CD6FcB9.md.jpg",
+        wholesale: [
+          { qty: "x5", price: "$207.800 c/u" },
+          { qty: "x10", price: "$202.300 c/u" }
+        ]
       },
 
 
       {
         id: 4,
-
-        name:
-          "Tostadora",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Tostadora práctica para preparar tostadas y acompañar tus desayunos o meriendas de una manera rápida y sencilla.",
-
-        image:
-          "https://iili.io/CD8kcX4.png"
+        name: "Soporte Fijo para TV 14\" a 42\"",
+        category: "Hogar",
+        price: "$13.500",
+        description: "Soporte fijo para pantallas de 14\" a 42\". Instalación en pared, seguro y resistente. Ideal para optimizar el espacio de tu hogar.",
+        image: "https://iili.io/CD6foHG.md.jpg",
+        wholesale: [
+          { qty: "x5", price: "$13.400 c/u" },
+          { qty: "x10", price: "$13.300 c/u" }
+        ]
       },
 
 
       {
         id: 5,
-
-        name:
-          "Cafetera",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Cafetera pensada para disfrutar un buen café en cualquier momento del día. Práctica y funcional para tu cocina.",
-
-        image:
-          "https://iili.io/CD8va8F.png"
+        name: "Smart TV BGH 60\" Google TV Ultra HD 4K",
+        category: "Electrodomésticos",
+        price: "$870.000",
+        description: "Smart TV de 60 pulgadas con resolución Ultra HD 4K. Sistema Google TV, acceso a plataformas de streaming, Chromecast y Google Assistant integrados.",
+        image: "https://iili.io/CD6q7Xp.md.png",
+        wholesale: null
       },
 
 
       {
         id: 6,
-
-        name:
-          "Microondas",
-
-        category:
-          "Cocina",
-
-        price:
-          "$00.000",
-
-        description:
-          "Microondas práctico para calentar y preparar diferentes comidas. Una solución cómoda para la cocina de todos los días.",
-
-        image:
-          "https://iili.io/CD8vQwb.png"
+        name: "Aire Acondicionado Split Pioneer 3500W",
+        category: "Electrodomésticos",
+        price: "$705.600",
+        description: "Aire acondicionado Split con función frío/calor, deshumidificación y programador de encendido automático. Potencia de 3500W, ideal para cualquier ambiente.",
+        image: "https://iili.io/CD6qDva.md.png",
+        wholesale: [
+          { qty: "x3", price: "$692.400 c/u" },
+          { qty: "x10", price: "$673.700 c/u" }
+        ]
       },
 
 
       {
         id: 7,
-
-        name:
-          "Aspiradora",
-
-        category:
-          "Limpieza",
-
-        price:
-          "$00.000",
-
-        description:
-          "Aspiradora para ayudarte a mantener limpios diferentes espacios del hogar de manera práctica y cómoda.",
-
-        image:
-          "https://iili.io/CD8SAdP.png"
+        name: "Picadora de Verdura Manual",
+        category: "Cocina",
+        price: "$16.500",
+        description: "Picadora manual mediante cuerda que pica vegetales en segundos. Permite controlar el grosor del corte, piezas desmontables y diseño compacto.",
+        image: "https://iili.io/CD6xWsR.md.png",
+        wholesale: null
       },
 
 
       {
         id: 8,
-
-        name:
-          "Plancha eléctrica",
-
-        category:
-          "Hogar",
-
-        price:
-          "$00.000",
-
-        description:
-          "Plancha eléctrica práctica para el cuidado diario de la ropa y para mantener tus prendas listas para cada ocasión.",
-
-        image:
-          "https://iili.io/CD8UFGR.png"
+        name: "Botella Térmica Stanley",
+        category: "Hogar",
+        price: "$26.999",
+        description: "Botella térmica con tapa hermética a rosca, pico deportivo y manija rígida integrada. Diseño ergonómico y antideslizante. Acero inoxidable libre de BPA.",
+        image: "https://iili.io/CD6cpUb.md.png",
+        wholesale: [
+          { qty: "x10", price: "$26.999 c/u" },
+          { qty: "x20", price: "$24.999 c/u" },
+          { qty: "x30", price: "$23.499 c/u" },
+          { qty: "x50", price: "$21.999 c/u" }
+        ]
       },
 
 
       {
         id: 9,
+        name: "Auricular Inalámbrico Exxtratech",
+        category: "Electrodomésticos",
+        price: "$18.499",
+        description: "Auriculares inalámbricos con conectividad Bluetooth, pantalla digital LED y estuche cargador incluido. Control táctil, diseño ergonómico y liviano.",
+        image: "https://iili.io/CD6GlGS.md.png",
+        wholesale: [
+          { qty: "x20", price: "$18.499 c/u" },
+          { qty: "x30", price: "$17.999 c/u" },
+          { qty: "x50", price: "$16.820 c/u" },
+          { qty: "x100", price: "$16.200 c/u" }
+        ]
+      },
 
-        name:
-          "Air Fryer Cosori",
 
-        category:
-          "Cocina",
+      {
+        id: 10,
+        name: "Minipimer Eiffel E-231 400W",
+        category: "Cocina",
+        price: "$31.700",
+        description: "Minipimer de 400W con cuchillas de acero inoxidable. Ideal para sopas, salsas, purés, licuados y smoothies. Diseño ergonómico y fácil de limpiar.",
+        image: "https://iili.io/CD6VodX.md.png",
+        wholesale: [
+          { qty: "x3", price: "$31.200 c/u" }
+        ]
+      },
 
-        price:
-          "$00.000",
 
-        description:
-          "Air Fryer Cosori para preparar diferentes comidas de manera práctica y cómoda. Un electrodoméstico ideal para sumar a tu cocina.",
+      {
+        id: 11,
+        name: "Acolchado Juvenil 1 Plaza y 1/2 + Funda",
+        category: "Hogar",
+        price: "$56.000",
+        description: "Acolchado juvenil de 172 cm × 240 cm en material corderito. Incluye funda. Ideal para camas de 1 plaza y 1/2. Diseño puede variar según disponibilidad.",
+        image: "https://iili.io/CD6hAhJ.md.png",
+        wholesale: [
+          { qty: "x5", price: "$53.700 c/u" },
+          { qty: "x10 o más", price: "$52.780 c/u" }
+        ]
+      },
 
-        image:
-          "https://iili.io/CD8g2R9.png"
+
+      {
+        id: 12,
+        name: "Bicicleta Rydetech Lady 500 R29",
+        category: "Electrodomésticos",
+        price: "$357.400",
+        description: "Bicicleta rodado R29 con 21 velocidades y cuadro de acero liviano. Color blanco/lila. Ideal para paseos y ejercicio al aire libre.",
+        image: "https://iili.io/CD6NdmX.md.png",
+        wholesale: [
+          { qty: "x3", price: "$341.300 c/u" },
+          { qty: "x10", price: "$327.100 c/u" }
+        ]
+      },
+
+
+      {
+        id: 13,
+        name: "Termotanque Eléctrico Sirena 40L",
+        category: "Hogar",
+        price: "$332.500",
+        description: "Termotanque eléctrico de 40 litros con carga de agua superior e inferior. Formato compacto, ideal para departamentos, baños y cocinas. Fácil instalación.",
+        image: "https://iili.io/CD6OIFR.md.png",
+        wholesale: null
+      },
+
+
+      {
+        id: 14,
+        name: "POCO X8 Pro 5G 8GB + 256GB",
+        category: "Electrodomésticos",
+        price: "$833.333",
+        description: "Smartphone con conectividad 5G, 8GB de RAM y 256GB de almacenamiento. Pantalla fluida, cámara de alta resolución y excelente autonomía de batería.",
+        image: "https://iili.io/CD6e9DX.md.png",
+        wholesale: null
+      },
+
+
+      {
+        id: 15,
+        name: "Máquina de Coser Portátil",
+        category: "Hogar",
+        price: "$31.000",
+        description: "Máquina de coser portátil, práctica y compacta. Ideal para arreglos, trabajos de costura y uso doméstico. Producto práctico y fácil de revender.",
+        image: "https://iili.io/CD6kFhF.md.png",
+        wholesale: [
+          { qty: "x3", price: "$29.600 c/u" },
+          { qty: "x10", price: "$28.500 c/u" }
+        ]
       }
 
     ];
@@ -3420,277 +4089,381 @@
     ===================================================== */
 
     const productsGrid =
-      document.getElementById(
-        "productsGrid"
-      );
+      document.getElementById("productsGrid");
+
+
+    const paginationControls =
+      document.getElementById("paginationControls");
+
+
+    const seeMoreInstagram =
+      document.getElementById("seeMoreInstagram");
 
 
     const modal =
-      document.getElementById(
-        "productModal"
-      );
+      document.getElementById("productModal");
 
 
     const modalImage =
-      document.getElementById(
-        "modalImage"
-      );
+      document.getElementById("modalImage");
 
 
     const modalTitle =
-      document.getElementById(
-        "modalTitle"
-      );
+      document.getElementById("modalTitle");
 
 
     const modalCategory =
-      document.getElementById(
-        "modalCategory"
-      );
+      document.getElementById("modalCategory");
 
 
     const modalDescription =
-      document.getElementById(
-        "modalDescription"
-      );
+      document.getElementById("modalDescription");
 
 
     const modalPrice =
-      document.getElementById(
-        "modalPrice"
-      );
+      document.getElementById("modalPrice");
+
+
+    const modalWholesale =
+      document.getElementById("modalWholesale");
 
 
     const modalWhatsapp =
-      document.getElementById(
-        "modalWhatsapp"
-      );
+      document.getElementById("modalWhatsapp");
 
 
     const modalClose =
-      document.getElementById(
-        "modalClose"
-      );
+      document.getElementById("modalClose");
 
 
     const modalContinue =
-      document.getElementById(
-        "modalContinue"
-      );
+      document.getElementById("modalContinue");
+
+
+    const hamburger =
+      document.getElementById("hamburger");
+
+
+    const mobileNav =
+      document.getElementById("mobileNav");
+
+
+    const mobileOverlay =
+      document.getElementById("mobileOverlay");
 
 
 
     /* =====================================================
-       CREAR PRODUCTOS
+       PAGINACIÓN
     ===================================================== */
 
-    function renderProducts() {
+    function getItemsPerPage() {
 
-      productsGrid.innerHTML = "";
-
-
-      products.forEach(
-        (product) => {
-
-
-          const article =
-            document.createElement(
-              "article"
-            );
-
-
-          article.className =
-            "product";
-
-
-          article.innerHTML = `
-
-            <div class="product-image">
-
-              <span class="product-label">
-                ${product.category}
-              </span>
-
-              <img
-                src="${product.image}"
-                alt="${product.name}"
-                loading="lazy"
-              >
-
-            </div>
-
-
-            <div class="product-info">
-
-              <h3>
-                ${product.name}
-              </h3>
-
-              <p>
-                ${product.description}
-              </p>
-
-              <div class="product-price">
-                ${product.price}
-              </div>
-
-              <div class="product-view">
-                Ver producto →
-              </div>
-
-            </div>
-
-          `;
-
-
-          article.addEventListener(
-            "click",
-            () => {
-
-              openProduct(
-                product
-              );
-
-            }
-          );
-
-
-          productsGrid.appendChild(
-            article
-          );
-
-        }
-      );
+      return window.innerWidth <= 700 ? 3 : 6;
 
     }
 
 
+    let currentPage = 1;
+    let totalPages = 1;
+
+
+    function renderProductsPage(page) {
+
+      const perPage = getItemsPerPage();
+      totalPages = Math.ceil(products.length / perPage);
+
+      if (page < 1) page = 1;
+      if (page > totalPages) page = totalPages;
+      currentPage = page;
+
+      const start = (page - 1) * perPage;
+      const end = Math.min(start + perPage, products.length);
+      const pageProducts = products.slice(start, end);
+
+      productsGrid.innerHTML = "";
+
+      pageProducts.forEach((product) => {
+
+        const article = document.createElement("article");
+        article.className = "product";
+
+        const hasWholesale =
+          product.wholesale && product.wholesale.length > 0;
+
+        let labelHTML = `
+          <span class="product-label">
+            ${product.category}
+          </span>
+        `;
+
+        if (hasWholesale) {
+          labelHTML += `
+            <span class="product-label wholesale" style="top:52px; left:14px;">
+              📦 Mayorista
+            </span>
+          `;
+        }
+
+        article.innerHTML = `
+
+          <div class="product-image">
+
+            ${labelHTML}
+
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="product-info">
+
+            <h3>
+              ${product.name}
+            </h3>
+
+            <div class="product-price">
+              ${product.price}
+            </div>
+
+            <div class="product-view">
+              Ver producto →
+            </div>
+
+          </div>
+
+        `;
+
+        article.addEventListener("click", () => {
+          openProduct(product);
+        });
+
+        productsGrid.appendChild(article);
+
+      });
+
+      renderPaginationControls();
+
+      // Mostrar/ocultar "Ver más en Instagram" SOLO en la última página
+      if (currentPage === totalPages) {
+        seeMoreInstagram.classList.add("visible");
+      } else {
+        seeMoreInstagram.classList.remove("visible");
+      }
+
+    }
+
+
+    function renderPaginationControls() {
+
+      const perPage = getItemsPerPage();
+      totalPages = Math.ceil(products.length / perPage);
+
+      if (totalPages <= 1) {
+        paginationControls.innerHTML = "";
+        return;
+      }
+
+      let html = "";
+
+      html += `
+        <button
+          onclick="goToPage(${currentPage - 1})"
+          ${currentPage === 1 ? 'disabled' : ''}
+        >
+          ← Anterior
+        </button>
+      `;
+
+      for (let i = 1; i <= totalPages; i++) {
+        html += `
+          <button
+            onclick="goToPage(${i})"
+            class="${i === currentPage ? 'active' : ''}"
+          >
+            ${i}
+          </button>
+        `;
+      }
+
+      html += `
+        <button
+          onclick="goToPage(${currentPage + 1})"
+          ${currentPage === totalPages ? 'disabled' : ''}
+        >
+          Siguiente →
+        </button>
+      `;
+
+      paginationControls.innerHTML = html;
+
+    }
+
+
+    window.goToPage = function(page) {
+
+      const perPage = getItemsPerPage();
+      totalPages = Math.ceil(products.length / perPage);
+
+      if (page < 1 || page > totalPages) return;
+
+      renderProductsPage(page);
+
+      const productsSection = document.getElementById("productos");
+      if (productsSection) {
+        const offset = 90;
+        const top = productsSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+
+    };
+
+
+    let resizeTimeout;
+
+    window.addEventListener("resize", () => {
+
+      clearTimeout(resizeTimeout);
+
+      resizeTimeout = setTimeout(() => {
+
+        const perPage = getItemsPerPage();
+        const newTotalPages = Math.ceil(products.length / perPage);
+
+        if (currentPage > newTotalPages) {
+          currentPage = newTotalPages;
+        }
+
+        renderProductsPage(currentPage);
+
+      }, 300);
+
+    });
+
+
 
     /* =====================================================
-       ABRIR PRODUCTO
+       ABRIR PRODUCTO (MODAL)
     ===================================================== */
 
     function openProduct(product) {
 
+      modalImage.src = product.image;
+      modalImage.alt = product.name;
+      modalTitle.textContent = product.name;
+      modalCategory.textContent = product.category;
+      modalDescription.textContent = product.description;
+      modalPrice.textContent = product.price;
 
-      modalImage.src =
-        product.image;
+      modalWholesale.innerHTML = "";
 
+      if (product.wholesale && product.wholesale.length > 0) {
 
-      modalImage.alt =
-        product.name;
+        const section = document.createElement("div");
+        section.className = "wholesale-section";
 
+        const title = document.createElement("div");
+        title.className = "wholesale-title";
+        title.innerHTML = `
+          <span>📦</span>
+          Precios por volumen
+          <span style="font-size:12px; font-weight:400; color:#92400e; margin-left:auto;">
+            Mayorista
+          </span>
+        `;
+        section.appendChild(title);
 
-      modalTitle.textContent =
-        product.name;
+        const grid = document.createElement("div");
+        grid.className = "wholesale-grid";
 
+        product.wholesale.forEach((item) => {
+          const row = document.createElement("div");
+          row.className = "wholesale-item";
+          row.innerHTML = `
+            <span class="qty">${item.qty}</span>
+            <span class="price">${item.price}</span>
+          `;
+          grid.appendChild(row);
+        });
 
-      modalCategory.textContent =
-        product.category;
+        section.appendChild(grid);
+        modalWholesale.appendChild(section);
 
+      }
 
-      modalDescription.textContent =
-        product.description;
-
-
-      modalPrice.textContent =
-        product.price;
-
-
-      const message =
-        `Hola! Quisiera consultar por el producto: ${product.name}`;
-
-
+      const message = `Hola! Quisiera consultar por el producto: ${product.name}`;
       modalWhatsapp.href =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-
-      modal.classList.add(
-        "active"
-      );
-
-
-      modal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-
-      document.body.classList.add(
-        "modal-open"
-      );
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
 
     }
+
+
+    function closeProduct() {
+
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+    }
+
+
+    modalClose.addEventListener("click", closeProduct);
+    modalContinue.addEventListener("click", closeProduct);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeProduct();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("active")) {
+        closeProduct();
+      }
+    });
 
 
 
     /* =====================================================
-       CERRAR PRODUCTO
+       HAMBURGER MENU
     ===================================================== */
 
-    function closeProduct() {
+    function toggleMenu() {
 
-      modal.classList.remove(
-        "active"
-      );
+      hamburger.classList.toggle("active");
+      mobileNav.classList.toggle("open");
+      mobileOverlay.classList.toggle("active");
 
-
-      modal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-
-      document.body.classList.remove(
-        "modal-open"
-      );
+      document.body.classList.toggle("modal-open");
 
     }
 
 
-    modalClose.addEventListener(
-      "click",
-      closeProduct
-    );
+    function closeMenu() {
+
+      hamburger.classList.remove("active");
+      mobileNav.classList.remove("open");
+      mobileOverlay.classList.remove("active");
+
+      document.body.classList.remove("modal-open");
+
+    }
 
 
-    modalContinue.addEventListener(
-      "click",
-      closeProduct
-    );
+    hamburger.addEventListener("click", toggleMenu);
+
+    mobileOverlay.addEventListener("click", closeMenu);
 
 
-    modal.addEventListener(
-      "click",
-      (event) => {
-
-        if (
-          event.target === modal
-        ) {
-
-          closeProduct();
-
-        }
-
-      }
-    );
-
-
-    document.addEventListener(
-      "keydown",
-      (event) => {
-
-        if (
-          event.key === "Escape" &&
-          modal.classList.contains("active")
-        ) {
-
-          closeProduct();
-
-        }
-
-      }
-    );
+    document.querySelectorAll(".mobile-nav a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
 
 
@@ -3698,93 +4471,39 @@
        HEADER SCROLL
     ===================================================== */
 
-    const navbar =
-      document.getElementById(
-        "navbar"
-      );
+    const navbar = document.getElementById("navbar");
 
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (
-          window.scrollY > 30
-        ) {
-
-          navbar.classList.add(
-            "scrolled"
-          );
-
-        } else {
-
-          navbar.classList.remove(
-            "scrolled"
-          );
-
-        }
-
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
       }
-    );
+    });
 
 
 
     /* =====================================================
-       REDES FLOTANTES
-       SE OCULTAN AL LLEGAR AL FOOTER
+       REDES FLOTANTES - OCULTAR AL LLEGAR AL FOOTER
     ===================================================== */
 
-    const floatingSocial =
-      document.getElementById(
-        "floatingSocial"
-      );
+    const floatingSocial = document.getElementById("floatingSocial");
+    const footer = document.getElementById("footer");
 
-
-    const footer =
-      document.getElementById(
-        "footer"
-      );
-
-
-    const footerObserver =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach(
-            (entry) => {
-
-              if (
-                entry.isIntersecting
-              ) {
-
-                floatingSocial.classList.add(
-                  "hidden"
-                );
-
-              } else {
-
-                floatingSocial.classList.remove(
-                  "hidden"
-                );
-
-              }
-
-            }
-          );
-
-        },
-
-        {
-          threshold: 0.05
-        }
-
-      );
-
-
-    footerObserver.observe(
-      footer
+    const footerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            floatingSocial.classList.add("hidden");
+          } else {
+            floatingSocial.classList.remove("hidden");
+          }
+        });
+      },
+      { threshold: 0.05 }
     );
+
+    footerObserver.observe(footer);
 
 
 
@@ -3792,7 +4511,7 @@
        INICIALIZAR
     ===================================================== */
 
-    renderProducts();
+    renderProductsPage(1);
 
   </script>
 
